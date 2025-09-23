@@ -10,7 +10,7 @@
 <body>
   <div class="bg-frame page2">
     <div class="form-block w-form">
-      <form class="form" data-wf-page-id="6736ec5b8902844654c23f5a" data-wf-element-id="95947f44-838e-1a1e-2d28-fac2546813e9">
+      <form class="form" id="sendForm" data-wf-page-id="6736ec5b8902844654c23f5a" data-wf-element-id="95947f44-838e-1a1e-2d28-fac2546813e9">
         <jsp:include page="../frame/menu.jsp"></jsp:include>
         <div class="service-main">
           <div class="frame-2 notice">
@@ -18,23 +18,23 @@
               <h1 class="heading2 support"><spring:message code="cs.head"/><br></h1>
               <div class="bright-g-txt"><spring:message code="cs.gtxt"/><br></div>
               <div class="input-box">
-                <div class="sp-txt"><spring:message code="cs.name"/></div><input class="support-input w-input" maxlength="256" name="field-3" data-name="Field 3" placeholder="" type="text" id="field-3" required="">
+                <div class="sp-txt"><spring:message code="cs.name"/></div><input style="color:black;" class="support-input w-input" maxlength="256" name="fname" placeholder="" type="text" required="">
               </div>
               <div class="input-box">
-                <div class="sp-txt"><spring:message code="cs.nameL"/></div><input class="support-input w-input" maxlength="256" name="field-3" data-name="Field 3" placeholder="" type="text" id="field-3" required="">
+                <div class="sp-txt"><spring:message code="cs.nameL"/></div><input style="color:black;" class="support-input w-input" maxlength="256" name="lname" placeholder="" type="text" required="">
               </div>
               <div class="input-box">
-                <div class="sp-txt"><spring:message code="cs.email"/></div><input class="support-input w-input" maxlength="256" name="field-3" data-name="Field 3" placeholder="" type="text" id="field-3" required="">
+                <div class="sp-txt"><spring:message code="cs.email"/></div><input style="color:black;" class="support-input w-input" maxlength="256" name="email" placeholder="" type="text" required="">
               </div>
               <div class="input-box">
-                <div class="sp-txt"><spring:message code="cs.account"/></div><input class="support-input w-input" maxlength="256" name="field-3" data-name="Field 3" placeholder="" type="text" id="field-3" required="">
+                <div class="sp-txt"><spring:message code="cs.account"/></div><input style="color:black;" class="support-input w-input" maxlength="256" name="account" placeholder="" type="text" required="">
               </div>
               <div class="input-box">
-                <div class="sp-txt"><spring:message code="cs.type"/></div><select id="field-4" name="field-4" data-name="Field 4" class="support-select w-select">
-                  <option value="Another option">Basic</option>
+                <div class="sp-txt"><spring:message code="cs.type"/></div><select id="type" name="type" class="support-select w-select">
+                  <option value="Message">Message</option>
                 </select>
               </div>
-              <a href="#" class="send-btn w-button"><spring:message code="cs.btn"/></a>
+              <a href="javascript:support()" id="spbtn" class="send-btn w-button"><spring:message code="cs.btn"/></a>
             </div>
           </div>
         </div>
@@ -44,4 +44,23 @@
   <jsp:include page="../frame/riskfooter.jsp"></jsp:include>
   <jsp:include page="../frame/footer.jsp"></jsp:include>
 </body>
+<script>
+function support(){
+	$("#spbtn").attr("spbtn","javascript:void(0)");
+	$.ajax({
+		type : 'post',
+		url : '/supportSend',
+		data : $("#sendForm").serialize(),
+		success:function(data){
+			alert(data.msg);
+			if(data.result == 'success'){
+				location.reload();
+			}else{
+				$("#spbtn").attr("spbtn","javascript:support()");
+			}
+		}
+	})
+}
+
+</script>
 </html>

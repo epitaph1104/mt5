@@ -1,19 +1,25 @@
 package egovframework.example.sample.web;
 
+import java.util.Arrays;
 import java.util.Locale;
+import java.util.Map;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
+import org.json.simple.JSONObject;
 import org.springframework.context.MessageSource;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.i18n.SessionLocaleResolver;
 
 import egovframework.example.sample.service.impl.SampleDAO;
+import egovframework.example.sample.web.utils.Log;
+import egovframework.example.sample.web.utils.Send;
 import egovframework.example.sample.web.utils.Utils;
 import egovframework.rte.psl.dataaccess.util.EgovMap;
 import egovframework.rte.ptl.mvc.tags.ui.pagination.PaginationInfo;
@@ -170,6 +176,69 @@ public class MainController {
 	    String uri = request.getRequestURI().substring(request.getContextPath().length());
 	    return "redirect:/" + lang + uri;
     }
+	
+	@ResponseBody
+	@RequestMapping(value="/supportSend" , produces = "application/json; charset=utf8") // 맨처음 나올 페이지 
+	public String supportSend(HttpServletRequest request){
+		JSONObject obj = new JSONObject();
+		obj.put("result", "fail");
+		
+		Map<String, String[]> paramMap = request.getParameterMap();
+	    StringBuilder sb = new StringBuilder();
+	    sb.append("요청 파라미터: {");
+
+	    for (Map.Entry<String, String[]> entry : paramMap.entrySet()) {
+	        sb.append(entry.getKey())
+	          .append("=")
+	          .append(Arrays.toString(entry.getValue()))
+	          .append(", ");
+	    }
+
+	    if (!paramMap.isEmpty()) {
+	        sb.setLength(sb.length() - 2); // 마지막 ", " 제거
+	    }
+	    sb.append("}");
+	    
+	    Log.print("supportSend 호출 시 파라미터 : " + sb.toString(), "call");
+	    
+		String fname = request.getParameter("fname"); 
+		String lname = request.getParameter("lname"); 
+		String email = request.getParameter("email"); 
+		String account = request.getParameter("account"); 
+		String type = request.getParameter("type"); 
+		
+		if(Utils.isNull(fname)){
+			obj.put("msg", Message.get().msg(messageSource, "msg.input_fname", request));
+			return obj.toJSONString();
+		}
+		if(Utils.isNull(lname)){
+			obj.put("msg", Message.get().msg(messageSource, "msg.input_lname", request));
+			return obj.toJSONString();
+		}
+		if(Utils.isNull(email)){
+			obj.put("msg", Message.get().msg(messageSource, "msg.input_email", request));
+			return obj.toJSONString();
+		}
+		if(!Utils.checkEmail(email)){
+			obj.put("msg", Message.get().msg(messageSource, "msg.input_email_vaild", request));
+			return obj.toJSONString();
+		}
+		if(Utils.isNull(account)){
+			obj.put("msg", Message.get().msg(messageSource, "msg.input_account", request));
+			return obj.toJSONString();
+		}
+		
+		String content = "First Name :"+fname + "<br/>Last Name :"+lname+"<br/>Email :"+email+"<br/>Account Number :"+account;
+		
+		if(!Send.sendMailText(email , "TROY Support Mail" , content)){
+			obj.put("msg", Message.get().msg(messageSource, "msg.mail_fail", request));
+			return obj.toJSONString();
+		}
+		
+		obj.put("result", "success");
+		obj.put("msg", Message.get().msg(messageSource, "msg.success", request));
+		return obj.toJSONString();
+	}
 
 	@RequestMapping(value="/main") // 맨처음 나올 페이지 
 	public String main(HttpServletRequest request){
