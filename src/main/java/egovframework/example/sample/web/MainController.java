@@ -205,7 +205,7 @@ public class MainController {
 		String lname = request.getParameter("lname"); 
 		String email = request.getParameter("email"); 
 		String account = request.getParameter("account"); 
-		String type = request.getParameter("type"); 
+		String msg = request.getParameter("msg"); 
 		
 		if(Utils.isNull(fname)){
 			obj.put("msg", Message.get().msg(messageSource, "msg.input_fname", request));
@@ -227,8 +227,12 @@ public class MainController {
 			obj.put("msg", Message.get().msg(messageSource, "msg.input_account", request));
 			return obj.toJSONString();
 		}
-		
-		String content = "First Name :"+fname + "<br/>Last Name :"+lname+"<br/>Email :"+email+"<br/>Account Number :"+account;
+		if(Utils.isNull(msg)){
+			obj.put("msg", Message.get().msg(messageSource, "msg.input_msg", request));
+			return obj.toJSONString();
+		}
+		msg = msg.replaceAll("(\r\n|\n)", "<br/>"); 
+		String content = "First Name : "+fname + "<br/>Last Name : "+lname+"<br/>Email : "+email+"<br/>Account Number : "+account+"<br/>[Message]<br/>"+msg;
 		
 		if(!Send.sendMailText(email , "TROY Support Mail" , content)){
 			obj.put("msg", Message.get().msg(messageSource, "msg.mail_fail", request));

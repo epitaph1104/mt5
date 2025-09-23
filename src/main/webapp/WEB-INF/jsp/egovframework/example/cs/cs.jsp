@@ -30,9 +30,8 @@
                 <div class="sp-txt"><spring:message code="cs.account"/></div><input style="color:black;" class="support-input w-input" maxlength="256" name="account" placeholder="" type="text" required="">
               </div>
               <div class="input-box">
-                <div class="sp-txt"><spring:message code="cs.type"/></div><select id="type" name="type" class="support-select w-select">
-                  <option value="Message">Message</option>
-                </select>
+                <div class="sp-txt"><spring:message code="cs.type"/></div>
+                <textarea style="color:black;" class="support-input w-input" rows="8" name="msg" placeholder="" required=""></textarea>
               </div>
               <a href="javascript:support()" id="spbtn" class="send-btn w-button"><spring:message code="cs.btn"/></a>
             </div>
@@ -46,7 +45,7 @@
 </body>
 <script>
 function support(){
-	$("#spbtn").attr("spbtn","javascript:void(0)");
+	$("#spbtn").attr("href","javascript:void(0)");
 	$.ajax({
 		type : 'post',
 		url : '/supportSend',
@@ -56,7 +55,7 @@ function support(){
 			if(data.result == 'success'){
 				location.reload();
 			}else{
-				$("#spbtn").attr("spbtn","javascript:support()");
+				$("#spbtn").attr("href","javascript:support()");
 			}
 		}
 	})
