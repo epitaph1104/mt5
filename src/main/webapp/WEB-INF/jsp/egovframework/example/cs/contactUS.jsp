@@ -38,7 +38,7 @@
                   <div class="icon-box service">
                     <div class="icon vector4"></div>
                     <div class="adbatages-txt mc"><spring:message code="contactUs.adSe-mtxt4"/></div>
-                    <div class="adbatages-txt">SUPPORT@TROYMARKETS.COM</div>
+                    <div class="adbatages-txt">admin@troymarketworld.com</div>
                   </div>
                 </div>
               </div>
