@@ -23,7 +23,7 @@
                   <div class="icon-box service">
                     <div class="icon vector1"></div>
                     <div class="adbatages-txt mc"><spring:message code="contactUs.adSe-mtxt"/></div>
-                    <div class="adbatages-txt"><spring:message code="contactUs.adSe-detail"/></div>
+                    <div class="adbatages-txt">Unit 87, 7/F, New East Sun Industrial Building,<br>18 Shing Yip Street, Kwun Tong, Kowloon, Hong Kong</div>
                   </div>
                   <div class="icon-box service">
                     <div class="icon vector2"></div>
@@ -33,7 +33,7 @@
                   <div class="icon-box service">
                     <div class="icon vector3"></div>
                     <div class="adbatages-txt mc"><spring:message code="contactUs.adSe-mtxt3"/></div>
-                    <div class="adbatages-txt">+61 (0)2 7908 3133</div>
+                    <div class="adbatages-txt">+64 204546249</div>
                   </div>
                   <div class="icon-box service">
                     <div class="icon vector4"></div>
