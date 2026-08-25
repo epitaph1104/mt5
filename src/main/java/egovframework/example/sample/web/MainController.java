@@ -44,13 +44,28 @@ public class MainController {
 	@RequestMapping(value="/{lang}/main") // 맨처음 나올 페이지 
 	public String mainlang(HttpServletRequest request, @PathVariable("lang") String lang , Model model){
 		setLanguageInSession(lang, request);
-		model.addAttribute("info", sampleDAO.select("selectPopup"));
+		// model.addAttribute("info", sampleDAO.select("selectPopup")); // hhm : 메인페이지 안나와서 주석처리 
 		return "main";
 	}
 	@RequestMapping(value="/{lang}/company")
 	public String companynlang(HttpServletRequest request, @PathVariable("lang") String lang){
 		setLanguageInSession(lang, request);
 		return "company/company";
+	}
+	@RequestMapping(value="/{lang}/account-types")
+	public String accountTypes(HttpServletRequest request, @PathVariable("lang") String lang){
+		setLanguageInSession(lang, request);
+		return "account/accountTypes";
+	}
+	@RequestMapping(value="/{lang}/trading-hours")
+	public String tradingHours(HttpServletRequest request, @PathVariable("lang") String lang){
+		setLanguageInSession(lang, request);
+		return "trading/tradingHours";
+	}
+	@RequestMapping(value="/{lang}/deposit-withdrawals")
+	public String depositWithdrawals(HttpServletRequest request, @PathVariable("lang") String lang){
+		setLanguageInSession(lang, request);
+		return "legal/depositWithdrawals";
 	}
 	@RequestMapping(value="/{lang}/trading/forex")
 	public String forexnlang(HttpServletRequest request, @PathVariable("lang") String lang){
@@ -250,6 +265,18 @@ public class MainController {
 	}
 	@RequestMapping(value="/company")
 	public String company(HttpServletRequest request){
+	    return setLanguageInSessionNolang(request);
+	}
+	@RequestMapping(value="/account-types")
+	public String accountTypesNolang(HttpServletRequest request){
+	    return setLanguageInSessionNolang(request);
+	}
+	@RequestMapping(value="/trading-hours")
+	public String tradingHoursNolang(HttpServletRequest request){
+	    return setLanguageInSessionNolang(request);
+	}
+	@RequestMapping(value="/deposit-withdrawals")
+	public String depositWithdrawalsNolang(HttpServletRequest request){
 	    return setLanguageInSessionNolang(request);
 	}
 	@RequestMapping(value="/trading/forex")

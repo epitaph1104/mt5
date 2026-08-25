@@ -1,55 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<!DOCTYPE html>
-<html data-wf-page="6736ecb1a34ef4d7cc7ddc55" data-wf-site="66fa23fa604f581407c85fa7">
-<head>
-  <meta charset="utf-8">
-  <jsp:include page="../frame/header.jsp"></jsp:include>
-</head>
-<body>
-  <div class="bg-frame page2">
-    <div class="form-block w-form">
-      <form class="form" data-wf-page-id="6736ecb1a34ef4d7cc7ddc55" data-wf-element-id="471a1eac-a2e9-00c5-90b9-72496d342f72">
-        <jsp:include page="../frame/menu.jsp"></jsp:include>
-        <div class="service-main">
-          <div class="frame-2 notice">
-            <section class="advatages-section">
-              <div data-w-id="430dbadb-013e-65b4-5a92-bb967904b71a" style="-webkit-transform:translate3d(0, 150px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 150px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 150px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 150px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);opacity:0" class="frame-2 black">
-                <div class="txt-sub-title"><spring:message code="contactUs.adSe-title"/></div>
-                <h1 class="heading cus"><spring:message code="contactUs.adSe-head"/></h1>
-                <div class="sub-txt service"><spring:message code="contactUs.adSe-stxt"/></div>
-                <div class="icon-list">
-                  <div class="icon-box service">
-                    <div class="icon vector1"></div>
-                    <div class="adbatages-txt mc"><spring:message code="contactUs.adSe-mtxt"/></div>
-                    <div class="adbatages-txt">Unit 87, 7/F, New East Sun Industrial Building,<br>18 Shing Yip Street, Kwun Tong, Kowloon, Hong Kong</div>
-                  </div>
-                  <div class="icon-box service">
-                    <div class="icon vector2"></div>
-                    <div class="adbatages-txt mc"><spring:message code="contactUs.adSe-mtxt2"/></div>
-                    <div class="adbatages-txt"><spring:message code="contactUs.adSe-detail2"/></div>
-                  </div>
-                  <div class="icon-box service">
-                    <div class="icon vector3"></div>
-                    <div class="adbatages-txt mc"><spring:message code="contactUs.adSe-mtxt3"/></div>
-                    <div class="adbatages-txt">+64 204546249</div>
-                  </div>
-                  <div class="icon-box service">
-                    <div class="icon vector4"></div>
-                    <div class="adbatages-txt mc"><spring:message code="contactUs.adSe-mtxt4"/></div>
-                    <div class="adbatages-txt">admin@troymarketworld.com</div>
-                  </div>
-                </div>
-              </div>
-            </section>
-          </div>
-        </div>
-        <jsp:include page="../frame/successSection.jsp"></jsp:include>
-      </form>
-    </div>
-  </div>
-  <jsp:include page="../frame/riskfooter.jsp"></jsp:include>
-  <jsp:include page="../frame/footer.jsp"></jsp:include>
-</body>
-</html>
+<jsp:include page="../frame/bytroxHeader.jsp" />
+<main><section class="page-space contact-hero"><div class="narrow"><h1 class="section-title">Contact Our<br><span class="green">Support</span></h1><p class="section-lead">Need help or expert guidance? Our professional support team is available 24/5 to provide prompt assistance and ensure your trading experience remains smooth and reliable.</p><h2 class="section-title" style="font-size:28px;margin-top:60px">General inquiries</h2><div class="contact-cards"><article class="contact-card"><img class="contact-card-icon" src="${ctx}/images/contact-faq.svg" alt=""><h3>FAQ</h3><p>Find quick answers to common trading questions in our FAQ section.</p></article><article class="contact-card"><img class="contact-card-icon" src="${ctx}/images/contact-email.svg" alt=""><h3>Send us an email</h3><p>Reach out via support@bytroxglobal.com and we will get back to you in 24 hours.</p></article></div><div class="contact-meta"><article><img class="contact-meta-icon" src="${ctx}/images/contact-chat.svg" alt=""><h4>Live Chat:</h4><p>Instant Assistance with Live Chat Support</p></article><article><img class="contact-meta-icon" src="${ctx}/images/contact-phone.svg" alt=""><h4>Call Us:</h4><p>Reach us via phone<br>+852 30501847</p></article><article><img class="contact-meta-icon" src="${ctx}/images/contact-address.svg" alt=""><h4>Physical Address:</h4><p>Flat A31, 8/F, Manning Industrial Building, No.116-118 How Ming Street, Kwun Tong, Kowloon, Hong Kong</p></article><article><img class="contact-meta-icon" src="${ctx}/images/contact-hours.svg" alt=""><h4>Office Hours</h4><p>Monday - Saturday (GMT+8)<br>07:00 ??07:00</p></article></div></div></section><section class="section"><div class="narrow"><h2 class="section-title">Fast account opening in<br><span class="green">3 simple steps</span></h2><div class="photo-steps"><img src="${ctx}/images/account-opening.jpg.png" alt="Trader opening account"><div class="steps-overlay"><article><small>Step 1</small><img class="contact-step-icon" src="${ctx}/images/contact-register.svg" alt=""><h3>Register</h3><p>Choose account type and complete our fast and secure application form</p></article><article><small>Step 2</small><img class="contact-step-icon" src="${ctx}/images/contact-fund.svg" alt=""><h3>Fund</h3><p>Fund your live account using a wide range of funding methods</p></article><article><small>Step 3</small><img class="contact-step-icon" src="${ctx}/images/contact-trade.svg" alt=""><h3>Trade</h3><p>Start trading on your live account and access +100 instruments across our platforms</p></article></div></div><div class="center mt40"><a class="btn btn-primary">START TRADING</a> <a class="btn btn-dark">DEMO TRADING</a></div></div></section></main>
+<jsp:include page="../frame/bytroxFooter.jsp" />
