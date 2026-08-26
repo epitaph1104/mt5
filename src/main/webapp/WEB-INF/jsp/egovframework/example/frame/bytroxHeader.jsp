@@ -9,7 +9,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>ByTrox</title>
-  <link rel="stylesheet" href="${ctx}/css/bytrox.css">
+  <link rel="stylesheet" href="${ctx}/css/bytrox.css?v=20260827-6">
 </head>
 <body>
 <header class="site-header">
@@ -22,7 +22,13 @@
       <div class="nav-item has-menu"><a href="${ctx}/${siteLang}/metaTrader5">Platforms &amp; Tools</a><div class="dropdown"><a href="${ctx}/${siteLang}/metaTrader5">MetaTrader 5</a><a href="${ctx}/${siteLang}/tool/economicCalender">Economic Calendar</a></div></div>
       <div class="nav-item has-menu"><a href="${ctx}/${siteLang}/company">About us</a><div class="dropdown"><a href="${ctx}/${siteLang}/company">About</a><a href="${ctx}/${siteLang}/cs/notice">Notice</a><a href="${ctx}/${siteLang}/cs/contactUS">Contact us</a></div></div>
     </nav>
-    <div class="header-actions"><a class="btn btn-primary" href="#">LOGIN</a><a class="btn btn-primary" href="${ctx}/${siteLang}/account-types">OPEN ACCOUNT</a></div>
+    <div class="header-actions">
+      <details class="language-switcher">
+        <summary>${siteLang == 'ko' ? 'KO' : siteLang == 'cn' ? 'CN' : 'EN'}</summary>
+        <div class="language-menu"><a href="${ctx}/en/main">EN</a><a href="${ctx}/ko/main">KO</a><a href="${ctx}/cn/main">CN</a></div>
+      </details>
+      <a class="btn btn-primary" href="#">LOGIN</a><a class="btn btn-primary" href="${ctx}/${siteLang}/account-types">OPEN ACCOUNT</a>
+    </div>
     <button class="hamburger" aria-label="Menu"><span aria-hidden="true">&#9776;</span></button>
   </div>
 </header>

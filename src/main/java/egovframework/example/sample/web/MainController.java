@@ -128,24 +128,25 @@ public class MainController {
 		return "cs/cs";
 	}
 	@RequestMapping(value="/{lang}/cs/notice")
-	public String noticenlang(HttpServletRequest request, @PathVariable("lang") String lang, Model model){
+	// public String noticenlang(HttpServletRequest request, @PathVariable("lang") String lang, Model model){
+	public String noticenlang(HttpServletRequest request, @PathVariable("lang") String lang){
 		setLanguageInSession(lang, request);
-		String idx = request.getParameter("idx");
-		String pageIndex = request.getParameter("pageIndex");
-		PaginationInfo pi = new PaginationInfo();
-		if(Utils.isNull(pageIndex)) pi.setCurrentPageNo(1);
-		else pi.setCurrentPageNo(Integer.parseInt(pageIndex));
-		pi.setPageSize(5);
-		pi.setRecordCountPerPage(10);
-		EgovMap in = new EgovMap();
-		in.put("first", pi.getFirstRecordIndex());
-		in.put("record", pi.getRecordCountPerPage());
-		in.put("lang", lang);
-		pi.setTotalRecordCount((int)sampleDAO.select("selectNoticeListCnt",in));
-		model.addAttribute("list", sampleDAO.list("selectNoticeList",in));
-		model.addAttribute("pi", pi);
-		model.addAttribute("idx", idx);
-		model.addAttribute("lang", lang);
+		// String idx = request.getParameter("idx");
+		// String pageIndex = request.getParameter("pageIndex");
+		// PaginationInfo pi = new PaginationInfo();
+		// if(Utils.isNull(pageIndex)) pi.setCurrentPageNo(1);
+		// else pi.setCurrentPageNo(Integer.parseInt(pageIndex));
+		// pi.setPageSize(5);
+		// pi.setRecordCountPerPage(10);
+		// EgovMap in = new EgovMap();
+		// in.put("first", pi.getFirstRecordIndex());
+		// in.put("record", pi.getRecordCountPerPage());
+		// in.put("lang", lang);
+		// pi.setTotalRecordCount((int)sampleDAO.select("selectNoticeListCnt",in));
+		// model.addAttribute("list", sampleDAO.list("selectNoticeList",in));
+		// model.addAttribute("pi", pi);
+		// model.addAttribute("idx", idx);
+		// model.addAttribute("lang", lang);
 		return "cs/notice";
 	}
 	@RequestMapping(value="/{lang}/cs/qna")
@@ -181,7 +182,12 @@ public class MainController {
 	@RequestMapping(value="/{lang}/privacyPolicy")
 	public String privacyPolicy(HttpServletRequest request, @PathVariable("lang") String lang){
 		setLanguageInSession(lang, request);
-		return "privacyPolicy";
+		return "legal/privacyPolicy";
+	}
+	@RequestMapping(value="/{lang}/termsOfService")
+	public String termsOfService(HttpServletRequest request, @PathVariable("lang") String lang){
+		setLanguageInSession(lang, request);
+		return "legal/termsOfService";
 	}
 	
 	private String setLanguageInSessionNolang(HttpServletRequest request) {
@@ -357,6 +363,10 @@ public class MainController {
 	}
 	@RequestMapping(value="/privacyPolicy")
 	public String privacyPolicy(HttpServletRequest request){
+	    return setLanguageInSessionNolang(request);
+	}
+	@RequestMapping(value="/termsOfService")
+	public String termsOfService(HttpServletRequest request){
 	    return setLanguageInSessionNolang(request);
 	}
 }
