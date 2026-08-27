@@ -27,7 +27,7 @@
         <summary>${siteLang == 'ko' ? 'KO' : siteLang == 'cn' ? 'CN' : 'EN'}</summary>
         <div class="language-menu"><a href="${ctx}/en/main">EN</a><a href="${ctx}/ko/main">KO</a><a href="${ctx}/cn/main">CN</a></div>
       </details>
-      <a class="btn btn-primary" href="#">LOGIN</a><a class="btn btn-primary" href="${ctx}/${siteLang}/account-types">OPEN ACCOUNT</a>
+      <a class="btn btn-primary" href="https://clientportal.bytroxfx.com/login">LOGIN</a><a class="btn btn-primary" href="${ctx}/${siteLang}/account-types">OPEN ACCOUNT</a>
     </div>
     <button class="hamburger" aria-label="Menu"><span aria-hidden="true">&#9776;</span></button>
   </div>
