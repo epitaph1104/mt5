@@ -171,3 +171,10 @@ img[src*="/images/"]{object-fit:contain;flex-shrink:0}
   .event-col{text-align:left}
   .event-col ul{text-align:left}
 }
+
+@media(max-width:560px){
+  .header-actions{gap:6px;margin-right:8px}
+  .header-actions .language-switcher{display:none}
+  .header-actions .btn:nth-of-type(1),.header-actions .btn:last-child{display:inline-flex;min-width:auto;padding:9px 10px;font-size:9px}
+  .hamburger{font-size:22px}
+}

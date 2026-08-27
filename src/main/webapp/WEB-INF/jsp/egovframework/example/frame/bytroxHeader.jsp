@@ -10,7 +10,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>ByTrox</title>
   <link rel="icon" type="image/png" href="${ctx}/images/bxtorxfavicon.png">
-  <link rel="stylesheet" href="${ctx}/css/bytrox.css?v=20260827-6">
+  <link rel="stylesheet" href="${ctx}/css/bytrox.css?v=20260827-7">
 </head>
 <body>
 <header class="site-header">
@@ -28,7 +28,7 @@
         <summary>${siteLang == 'ko' ? 'KO' : siteLang == 'cn' ? 'CN' : 'EN'}</summary>
         <div class="language-menu"><a href="${ctx}/en/main">EN</a><a href="${ctx}/ko/main">KO</a><a href="${ctx}/cn/main">CN</a></div>
       </details>
-      <a class="btn btn-primary" href="https://clientportal.bytroxfx.com/login">LOGIN</a><a class="btn btn-primary" href="${ctx}/${siteLang}/account-types">OPEN ACCOUNT</a>
+      <a class="btn btn-primary" href="https://clientportal.bytroxfx.com">LOGIN</a><a class="btn btn-primary" href="https://clientportal.bytroxfx.com">OPEN ACCOUNT</a>
     </div>
     <button class="hamburger" aria-label="Menu"><span aria-hidden="true">&#9776;</span></button>
   </div>
