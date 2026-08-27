@@ -9,6 +9,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>ByTrox</title>
+  <link rel="icon" type="image/png" href="${ctx}/images/bxtorxfavicon.png">
   <link rel="stylesheet" href="${ctx}/css/bytrox.css?v=20260827-6">
 </head>
 <body>
