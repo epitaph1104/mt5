@@ -6,6 +6,7 @@
 <!doctype html>
 <html lang="${siteLang}">
 <head>
+<script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="703ed9a9-f52f-46fe-8bcd-a025446c0bab" data-blockingmode="auto" type="text/javascript"></script>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>ByTrox</title>
