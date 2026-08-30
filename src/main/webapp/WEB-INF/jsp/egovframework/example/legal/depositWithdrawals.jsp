@@ -1,5 +1,221 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <jsp:include page="../frame/bytroxHeader.jsp" />
-<main><section class="page-space"><div class="narrow"><h1 class="section-title">Deposits &amp; Withdrawals</h1><p class="section-lead">Bytrox offers a secure and intuitive platform for all your financial transactions. Our deposit and withdrawal systems are built for speed, simplicity, and reliability, ensuring your funds move efficiently and safely at every step.</p><div class="info-card-grid"><article class="info-card"><img src="${ctx}/images/deposit-methods.svg" alt=""><h3>Payment Methods</h3><p>Select from multiple trusted and convenient payment options for seamless deposits and withdrawals.</p></article><article class="info-card"><img src="${ctx}/images/deposit-fast.svg" alt=""><h3>Fast Processing</h3><p>Benefit from rapid transaction handling, giving you quick access to your funds when you need them.</p></article><article class="info-card"><img src="${ctx}/images/deposit-security.svg" alt=""><h3>Transparent Fees</h3><p>All costs are clearly displayed upfront - no hidden charges or unexpected deductions.</p></article><article class="info-card"><img src="${ctx}/images/deposit-security.svg" alt=""><h3>High Security Standards</h3><p>Your transactions are safeguarded with advanced encryption and strict security protocols for complete peace of mind.</p></article></div><div class="center mt40"><a class="btn btn-primary">START TRADING</a> <a class="btn btn-dark">DEMO TRADING</a></div></div></section><section class="section"><div class="narrow"><h2 class="section-title">Depositing Funds with Bytrox - <span class="green">Fast and Easy!</span></h2><p class="section-lead">Ready to start trading? Adding funds to your Bytrox Global account takes just minutes. Follow these three simple steps:</p><div class="photo-steps"><img src="${ctx}/images/account-opening.jpg.png" alt="Trader using ByTrox on a phone"><div class="steps-overlay"><article><small>Step 1</small><img src="${ctx}/images/deposit-login.svg" alt="" style="width:30px;"><h3>Log in to the Client Portal</h3><p>Access your account securely from the main menu - it is quick and convenient.</p></article><article><small>Step 2</small><img src="${ctx}/images/deposit-select.svg" alt=""><h3>Go to Deposits Section</h3><p>Navigate to the Deposit tab in your dashboard and select your funding option.</p></article><article><small>Step 3</small><img src="${ctx}/images/deposit-confirm.svg" alt=""><h3>Select Your Account and Method</h3><p>Choose the trading account and payment method that best suits your needs, then confirm your deposit.</p></article></div></div></div></section><section class="section"><div class="narrow"><h2 class="section-title">Payment Methods</h2><p class="section-lead">Fast and secure transactions with no hidden fees.</p><div class="center" style="margin-bottom:25px"><button class="btn btn-primary" data-tab>Deposit</button> <button class="btn btn-light" data-tab>Withdrawal</button></div><div style="overflow-x:auto"><table class="data-table"><thead><tr><th>Payment Method</th><th>Min. Amount</th><th>Execution Time</th><th>Fees</th></tr></thead><tbody><tr><td><img class="payment-method-icon" src="${ctx}/images/deposit-payment-asia.svg" alt="">Payment Asia</td><td class="">$10 or currency equivalent</td><td class="highlight">15 - 30 Minutes</td><td class="">None</td></tr><tr><td><img class="payment-method-icon" src="${ctx}/images/deposit-bitcoin.svg" alt="">Bitcoin</td><td class="">$10 or currency equivalent</td><td class="highlight">5 - 15 Minutes</td><td class="">None</td></tr><tr><td><img class="payment-method-icon" src="${ctx}/images/deposit-ethereum.svg" alt="">Ethereum</td><td class="">$10 or currency equivalent</td><td class="highlight">5 - 15 Minutes</td><td class="">None</td></tr><tr><td><img class="payment-method-icon" src="${ctx}/images/deposit-tether.svg" alt="">Tether</td><td class="">$10 or currency equivalent</td><td class="highlight">5 - 15 Minutes</td><td class="">None</td></tr></tbody></table></div></div></section><section class="cta"><div class="container"><h2>Ready to get started?</h2><p>Open an account in just a few steps and gain access to all asset classes</p><a class="btn btn-light" href="${ctx}/${siteLang}/account-types">Open Live Account</a><a class="btn" style="background:rgba(255,255,255,.2);color:#fff" href="#">Try free demo</a></div></section></main>
+<main>
+  <section class="page-space">
+    <div class="narrow">
+      <h1 class="section-title">
+        <spring:message code="bytrox.legal.depositwithdrawals.001" />
+      </h1>
+      <p class="section-lead">
+        <spring:message code="bytrox.legal.depositwithdrawals.002" />
+      </p>
+      <div class="info-card-grid">
+        <article class="info-card"><img src="${ctx}/images/deposit-methods.svg" alt="">
+          <h3>
+            <spring:message code="bytrox.legal.depositwithdrawals.003" />
+          </h3>
+          <p>
+            <spring:message code="bytrox.legal.depositwithdrawals.004" />
+          </p>
+        </article>
+        <article class="info-card"><img src="${ctx}/images/deposit-fast.svg" alt="">
+          <h3>
+            <spring:message code="bytrox.legal.depositwithdrawals.005" />
+          </h3>
+          <p>
+            <spring:message code="bytrox.legal.depositwithdrawals.006" />
+          </p>
+        </article>
+        <article class="info-card"><img src="${ctx}/images/deposit-security.svg" alt="">
+          <h3>
+            <spring:message code="bytrox.legal.depositwithdrawals.007" />
+          </h3>
+          <p>
+            <spring:message code="bytrox.legal.depositwithdrawals.008" />
+          </p>
+        </article>
+        <article class="info-card"><img src="${ctx}/images/deposit-security.svg" alt="">
+          <h3>
+            <spring:message code="bytrox.legal.depositwithdrawals.009" />
+          </h3>
+          <p>
+            <spring:message code="bytrox.legal.depositwithdrawals.010" />
+          </p>
+        </article>
+      </div>
+      <div class="center mt40"><a class="btn btn-primary">
+          <spring:message code="bytrox.legal.depositwithdrawals.011" />
+        </a> <a class="btn btn-dark">
+          <spring:message code="bytrox.legal.depositwithdrawals.012" />
+        </a></div>
+    </div>
+  </section>
+  <section class="section">
+    <div class="narrow">
+      <h2 class="section-title">
+        <spring:message code="bytrox.legal.depositwithdrawals.013" /> <span class="green">
+          <spring:message code="bytrox.legal.depositwithdrawals.014" />
+        </span>
+      </h2>
+      <p class="section-lead">
+        <spring:message code="bytrox.legal.depositwithdrawals.015" />
+      </p>
+      <div class="photo-steps"><img src="${ctx}/images/account-opening.jpg.png" alt="Trader using ByTrox on a phone">
+        <div class="steps-overlay">
+          <article><small>
+              <spring:message code="bytrox.legal.depositwithdrawals.016" />
+            </small><img src="${ctx}/images/deposit-login.svg" alt="" style="width:30px;">
+            <h3>
+              <spring:message code="bytrox.legal.depositwithdrawals.017" />
+            </h3>
+            <p>
+              <spring:message code="bytrox.legal.depositwithdrawals.018" />
+            </p>
+          </article>
+          <article><small>
+              <spring:message code="bytrox.legal.depositwithdrawals.019" />
+            </small><img src="${ctx}/images/deposit-select.svg" alt="">
+            <h3>
+              <spring:message code="bytrox.legal.depositwithdrawals.020" />
+            </h3>
+            <p>
+              <spring:message code="bytrox.legal.depositwithdrawals.021" />
+            </p>
+          </article>
+          <article><small>
+              <spring:message code="bytrox.legal.depositwithdrawals.022" />
+            </small><img src="${ctx}/images/deposit-confirm.svg" alt="">
+            <h3>
+              <spring:message code="bytrox.legal.depositwithdrawals.023" />
+            </h3>
+            <p>
+              <spring:message code="bytrox.legal.depositwithdrawals.024" />
+            </p>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="section">
+    <div class="narrow">
+      <h2 class="section-title">
+        <spring:message code="bytrox.legal.depositwithdrawals.025" />
+      </h2>
+      <p class="section-lead">
+        <spring:message code="bytrox.legal.depositwithdrawals.026" />
+      </p>
+      <div class="center" style="margin-bottom:25px"><button class="btn btn-primary" data-tab>
+          <spring:message code="bytrox.legal.depositwithdrawals.027" />
+        </button> <button class="btn btn-light" data-tab>
+          <spring:message code="bytrox.legal.depositwithdrawals.028" />
+        </button></div>
+      <div style="overflow-x:auto">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>
+                <spring:message code="bytrox.legal.depositwithdrawals.029" />
+              </th>
+              <th>
+                <spring:message code="bytrox.legal.depositwithdrawals.030" />
+              </th>
+              <th>
+                <spring:message code="bytrox.legal.depositwithdrawals.031" />
+              </th>
+              <th>
+                <spring:message code="bytrox.legal.depositwithdrawals.032" />
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <span class="payment-method">
+                  <img class="payment-method-icon" src="${ctx}/images/deposit-payment-asia.svg" alt="">
+                  <spring:message code="bytrox.legal.depositwithdrawals.033" />
+                </span>
+              </td>
+              <td class="">
+                <spring:message code="bytrox.legal.depositwithdrawals.034" />
+              </td>
+              <td class="highlight">
+                <spring:message code="bytrox.legal.depositwithdrawals.035" />
+              </td>
+              <td class="">
+                <spring:message code="bytrox.legal.depositwithdrawals.036" />
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <span class="payment-method">
+                  <img class="payment-method-icon" src="${ctx}/images/deposit-bitcoin.svg" alt="">
+                  <spring:message code="bytrox.legal.depositwithdrawals.037" />
+                </span>
+              </td>
+              <td class="">
+                <spring:message code="bytrox.legal.depositwithdrawals.038" />
+              </td>
+              <td class="highlight">
+                <spring:message code="bytrox.legal.depositwithdrawals.039" />
+              </td>
+              <td class="">
+                <spring:message code="bytrox.legal.depositwithdrawals.040" />
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <span class="payment-method">
+                  <img class="payment-method-icon" src="${ctx}/images/deposit-ethereum.svg" alt="">
+                  <spring:message code="bytrox.legal.depositwithdrawals.041" />
+                </span>
+              </td>
+              <td class="">
+                <spring:message code="bytrox.legal.depositwithdrawals.042" />
+              </td>
+              <td class="highlight">
+                <spring:message code="bytrox.legal.depositwithdrawals.043" />
+              </td>
+              <td class="">
+                <spring:message code="bytrox.legal.depositwithdrawals.044" />
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <span class="payment-method">
+                  <img class="payment-method-icon" src="${ctx}/images/deposit-tether.svg" alt="">
+                  <spring:message code="bytrox.legal.depositwithdrawals.045" />
+                </span>
+              </td>
+              <td class="">
+                <spring:message code="bytrox.legal.depositwithdrawals.046" />
+              </td>
+              <td class="highlight">
+                <spring:message code="bytrox.legal.depositwithdrawals.047" />
+              </td>
+              <td class="">
+                <spring:message code="bytrox.legal.depositwithdrawals.048" />
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+  <section class="cta">
+    <div class="container">
+      <h2>
+        <spring:message code="bytrox.legal.depositwithdrawals.049" />
+      </h2>
+      <p>
+        <spring:message code="bytrox.legal.depositwithdrawals.050" />
+      </p><a class="btn btn-light" href="${ctx}/${siteLang}/account-types">
+        <spring:message code="bytrox.legal.depositwithdrawals.051" />
+      </a><a class="btn" style="background:rgba(255,255,255,.2);color:#fff" href="#">
+        <spring:message code="bytrox.legal.depositwithdrawals.052" />
+      </a>
+    </div>
+  </section>
+</main>
 <jsp:include page="../frame/bytroxFooter.jsp" />

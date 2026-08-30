@@ -1,32 +1,441 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <jsp:include page="../frame/bytroxHeader.jsp" />
 <main class="policy-page">
-  <section class="policy-hero"><div class="narrow"><h1>ByTrox Global Privacy Notice</h1></div></section>
-  <section class="policy-content"><div class="policy-container">
-    <p>We prioritise your privacy and the security of your personal information. We understand the trust you place in us when sharing your information and are committed to protecting it in accordance with the highest standards of privacy law globally.</p>
-    <h2>Your Consent</h2>
-    <p>By engaging with our services, using our websites or platforms, by applying to work with us, or by providing us with your personal information directly or indirectly, you consent to the collection, use, and disclosure of your personal information as outlined in this Privacy Notice. This consent is granted when you submit information through our application forms, during communications with us, or by using our digital services. Your continued use of our services signifies your acceptance of this Privacy Notice and any updates to it.</p>
-    <h2>Purpose of Data Collection</h2>
-    <p>ByTrox collects personal information to provide you with our products and services, or to employ you.</p>
-    <table class="policy-table"><thead><tr><th>Category</th><th>Description</th></tr></thead><tbody><tr><td>Assessment and Account Management</td><td>To evaluate your applications, manage your account, and deliver the services you have requested.</td></tr><tr><td>Compliance and Regulatory</td><td>To meet our regulatory and legal obligations, including identity verification and anti-money laundering checks.</td></tr><tr><td>Service Enhancement</td><td>To improve our offerings, customer service, and develop new products that meet customer and market needs.</td></tr><tr><td>Communication</td><td>To keep you informed about relevant opportunities, updates, and offerings from ByTrox.</td></tr><tr><td>Direct Marketing</td><td>To offer you products and services that we believe may interest you.</td></tr></tbody></table>
-    <h2>Types of Personal Information Collected</h2>
-    <p>The personal information we collect depends on the products and services we offer and how you deal with us, or if you have applied to work with us.</p>
-    <table class="policy-table"><thead><tr><th>Personal Information</th><th>What this includes</th></tr></thead><tbody><tr><td>Identity, demographic and contact details</td><td><ul class="policy-check-list"><li>Name, date of birth, mailing and residential address, telephone numbers, and email address.</li><li>Age, gender, country of birth, citizenship or residency status, relationship status and family circumstances.</li></ul></td></tr><tr><td>Government related identifiers and identity documents</td><td><ul class="policy-check-list"><li>Concession, passport, visa, driver licence, and tax file number.</li><li>Copies of other government identification numbers or documents such as birth and marriage certificates.</li></ul></td></tr><tr><td>Employment information</td><td><ul class="policy-check-list"><li>If you are a client, employment status, salary, and role.</li><li>If you work for us or apply to work for us, the above information plus employment history and workplace information.</li></ul></td></tr><tr><td>Financial and credit-related information</td><td><ul class="policy-check-list"><li>Your bank account and credit card details.</li><li>Personal insolvency information.</li><li>Consumer credit information, including loans, credit cards, overdrafts and repayment history.</li></ul></td></tr><tr><td>Property and asset-related information</td><td>Information about property or assets to verify your source of wealth and funds.</td></tr><tr><td>Website and app tracking</td><td>Information collected through cookies and other technologies, including pages viewed, location and server address/IP address.</td></tr><tr><td>Interaction and behavioural information</td><td>Your queries, complaints, marketing preferences, and information collected during application, trading and transactions.</td></tr></tbody></table>
-    <h2>How we collect your personal information</h2>
-    <p>We collect your personal information from you, including interactions in person, over the phone, via email, website and mail; from embedded tools on our websites such as cookies and pixels; from third parties including introducing brokers, affiliates and service providers; and from publicly available sources such as social media and government registers.</p>
-    <h2>Legal Bases for Processing</h2>
-    <p>ByTrox processes your personal information under several legal bases to provide our products and services across our global operations and in compliance with our global obligations.</p>
-    <table class="policy-table"><thead><tr><th>Reason for Processing</th><th>Description</th></tr></thead><tbody><tr><td>Business administration</td><td><ul class="policy-check-list"><li>Billing and financial auditing.</li><li>Estimating balance sheet reserves.</li><li>Processing financial transactions.</li></ul></td></tr><tr><td>Business decisions and improvements</td><td><ul class="policy-check-list"><li>Using data analytics to generate business information and improve our products and services.</li><li>Identifying opportunities to improve our business, products and services.</li></ul></td></tr><tr><td>Consent, including marketing</td><td>Where you have explicitly agreed to our processing of information for specific purposes, such as marketing communications.</td></tr><tr><td>Legal and regulatory obligations</td><td>To comply with financial regulations, anti-money laundering laws, tax laws, employment and labour laws, and dispute resolution obligations.</td></tr><tr><td>Legitimate interests</td><td>To improve our services, protect against fraud and enhance customer service, except where overridden by your rights and freedoms.</td></tr><tr><td>Providing our products and services</td><td><ul class="policy-check-list"><li>Actioning your requests and administering your trades and accounts.</li><li>Answering questions, assessing applications and performing contractual obligations.</li><li>Responding to complaints and enquiries.</li></ul></td></tr></tbody></table>
-    <h2>Data Sharing</h2>
-    <p>Your personal information may be shared within the ByTrox group and with external third parties under controlled and secure conditions.</p>
-    <table class="policy-table"><thead><tr><th>Group</th><th>Description</th></tr></thead><tbody><tr><td>ByTrox Group</td><td>Across our global offices for account management, operational support, and service provision.</td></tr><tr><td>Regulatory and Legal Compliance</td><td>With regulators, law enforcement, and other governmental authorities as required by law.</td></tr><tr><td>Service Providers</td><td>With third-party service providers who support our operations, including IT support, marketing, and customer service.</td></tr><tr><td>Business Partners</td><td>As necessary to provide requested services or where you have chosen to use an introducing broker, money manager, affiliate or other third party.</td></tr></tbody></table>
-    <h2>Sharing overseas</h2><p>ByTrox operates globally through its owned and controlled entities and service providers. Your personal information may be shared with recipients in locations around the world where required to provide our services or comply with applicable law.</p>
-    <h2>If you do not provide us with your personal information</h2><p>You do not have to provide us, our agents, introducing brokers, affiliates, or service providers with personal information when seeking our products or services. However, if you do not provide information we require, we may not be able to provide the products or services you request, or employ you.</p>
-    <h2>Protection Measures</h2><p>We are committed to protecting your personal information through encryption, firewalls, secure server facilities, access controls, and regular staff training on data protection and privacy.</p>
-    <h2>Rights of Individuals</h2><table class="policy-table"><thead><tr><th>Right</th><th>Description</th></tr></thead><tbody><tr><td>Access</td><td>You can request access to the personal information we hold about you.</td></tr><tr><td>Correction</td><td>Request correction of inaccurate personal information.</td></tr><tr><td>Erasure and Restriction</td><td>Ask for your information to be deleted in certain circumstances or request restriction of processing.</td></tr><tr><td>Portability and Object</td><td>Obtain and reuse your data for your own purposes or object to processing based on legitimate interests or direct marketing.</td></tr><tr><td>Withdraw Consent</td><td>Where processing is based on consent, you may withdraw that consent at any time.</td></tr></tbody></table>
-    <h2>Cookies and Tracking Technologies</h2><p>ByTrox utilises cookies and similar tracking technologies on our websites and applications to enhance user experience and gather analytical data. You can accept or decline cookies through your browser settings, although disabling cookies may limit some site functions.</p>
-    <h2>Changes to This Policy</h2><p>ByTrox may update or modify this Privacy Notice to reflect changes in our practices, technology, legal requirements, or other factors. We encourage you to review this policy periodically.</p>
-    <h2>Contact Us</h2><p>For questions about this Privacy Notice, or to make a complaint about the way we handle your personal information, contact our Privacy Officer at <a href="mailto:support@bytroxfx.com">support@bytroxfx.com</a>.</p>
-  </div></section>
+  <section class="policy-hero">
+    <div class="narrow">
+      <h1>
+        <spring:message code="bytrox.legal.privacypolicy.001" />
+      </h1>
+    </div>
+  </section>
+  <section class="policy-content">
+    <div class="policy-container">
+      <p>
+        <spring:message code="bytrox.legal.privacypolicy.002" />
+      </p>
+      <h2>
+        <spring:message code="bytrox.legal.privacypolicy.003" />
+      </h2>
+      <p>
+        <spring:message code="bytrox.legal.privacypolicy.004" />
+      </p>
+      <h2>
+        <spring:message code="bytrox.legal.privacypolicy.005" />
+      </h2>
+      <p>
+        <spring:message code="bytrox.legal.privacypolicy.006" />
+      </p>
+      <table class="policy-table">
+        <thead>
+          <tr>
+            <th>
+              <spring:message code="bytrox.legal.privacypolicy.007" />
+            </th>
+            <th>
+              <spring:message code="bytrox.legal.privacypolicy.008" />
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <spring:message code="bytrox.legal.privacypolicy.009" />
+            </td>
+            <td>
+              <spring:message code="bytrox.legal.privacypolicy.010" />
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <spring:message code="bytrox.legal.privacypolicy.011" />
+            </td>
+            <td>
+              <spring:message code="bytrox.legal.privacypolicy.012" />
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <spring:message code="bytrox.legal.privacypolicy.013" />
+            </td>
+            <td>
+              <spring:message code="bytrox.legal.privacypolicy.014" />
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <spring:message code="bytrox.legal.privacypolicy.015" />
+            </td>
+            <td>
+              <spring:message code="bytrox.legal.privacypolicy.016" />
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <spring:message code="bytrox.legal.privacypolicy.017" />
+            </td>
+            <td>
+              <spring:message code="bytrox.legal.privacypolicy.018" />
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <h2>
+        <spring:message code="bytrox.legal.privacypolicy.019" />
+      </h2>
+      <p>
+        <spring:message code="bytrox.legal.privacypolicy.020" />
+      </p>
+      <table class="policy-table">
+        <thead>
+          <tr>
+            <th>
+              <spring:message code="bytrox.legal.privacypolicy.021" />
+            </th>
+            <th>
+              <spring:message code="bytrox.legal.privacypolicy.022" />
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <spring:message code="bytrox.legal.privacypolicy.023" />
+            </td>
+            <td>
+              <ul class="policy-check-list">
+                <li>
+                  <spring:message code="bytrox.legal.privacypolicy.024" />
+                </li>
+                <li>
+                  <spring:message code="bytrox.legal.privacypolicy.025" />
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <spring:message code="bytrox.legal.privacypolicy.026" />
+            </td>
+            <td>
+              <ul class="policy-check-list">
+                <li>
+                  <spring:message code="bytrox.legal.privacypolicy.027" />
+                </li>
+                <li>
+                  <spring:message code="bytrox.legal.privacypolicy.028" />
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <spring:message code="bytrox.legal.privacypolicy.029" />
+            </td>
+            <td>
+              <ul class="policy-check-list">
+                <li>
+                  <spring:message code="bytrox.legal.privacypolicy.030" />
+                </li>
+                <li>
+                  <spring:message code="bytrox.legal.privacypolicy.031" />
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <spring:message code="bytrox.legal.privacypolicy.032" />
+            </td>
+            <td>
+              <ul class="policy-check-list">
+                <li>
+                  <spring:message code="bytrox.legal.privacypolicy.033" />
+                </li>
+                <li>
+                  <spring:message code="bytrox.legal.privacypolicy.034" />
+                </li>
+                <li>
+                  <spring:message code="bytrox.legal.privacypolicy.035" />
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <spring:message code="bytrox.legal.privacypolicy.036" />
+            </td>
+            <td>
+              <spring:message code="bytrox.legal.privacypolicy.037" />
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <spring:message code="bytrox.legal.privacypolicy.038" />
+            </td>
+            <td>
+              <spring:message code="bytrox.legal.privacypolicy.039" />
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <spring:message code="bytrox.legal.privacypolicy.040" />
+            </td>
+            <td>
+              <spring:message code="bytrox.legal.privacypolicy.041" />
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <h2>
+        <spring:message code="bytrox.legal.privacypolicy.042" />
+      </h2>
+      <p>
+        <spring:message code="bytrox.legal.privacypolicy.043" />
+      </p>
+      <h2>
+        <spring:message code="bytrox.legal.privacypolicy.044" />
+      </h2>
+      <p>
+        <spring:message code="bytrox.legal.privacypolicy.045" />
+      </p>
+      <table class="policy-table">
+        <thead>
+          <tr>
+            <th>
+              <spring:message code="bytrox.legal.privacypolicy.046" />
+            </th>
+            <th>
+              <spring:message code="bytrox.legal.privacypolicy.047" />
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <spring:message code="bytrox.legal.privacypolicy.048" />
+            </td>
+            <td>
+              <ul class="policy-check-list">
+                <li>
+                  <spring:message code="bytrox.legal.privacypolicy.049" />
+                </li>
+                <li>
+                  <spring:message code="bytrox.legal.privacypolicy.050" />
+                </li>
+                <li>
+                  <spring:message code="bytrox.legal.privacypolicy.051" />
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <spring:message code="bytrox.legal.privacypolicy.052" />
+            </td>
+            <td>
+              <ul class="policy-check-list">
+                <li>
+                  <spring:message code="bytrox.legal.privacypolicy.053" />
+                </li>
+                <li>
+                  <spring:message code="bytrox.legal.privacypolicy.054" />
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <spring:message code="bytrox.legal.privacypolicy.055" />
+            </td>
+            <td>
+              <spring:message code="bytrox.legal.privacypolicy.056" />
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <spring:message code="bytrox.legal.privacypolicy.057" />
+            </td>
+            <td>
+              <spring:message code="bytrox.legal.privacypolicy.058" />
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <spring:message code="bytrox.legal.privacypolicy.059" />
+            </td>
+            <td>
+              <spring:message code="bytrox.legal.privacypolicy.060" />
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <spring:message code="bytrox.legal.privacypolicy.061" />
+            </td>
+            <td>
+              <ul class="policy-check-list">
+                <li>
+                  <spring:message code="bytrox.legal.privacypolicy.062" />
+                </li>
+                <li>
+                  <spring:message code="bytrox.legal.privacypolicy.063" />
+                </li>
+                <li>
+                  <spring:message code="bytrox.legal.privacypolicy.064" />
+                </li>
+              </ul>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <h2>
+        <spring:message code="bytrox.legal.privacypolicy.065" />
+      </h2>
+      <p>
+        <spring:message code="bytrox.legal.privacypolicy.066" />
+      </p>
+      <table class="policy-table">
+        <thead>
+          <tr>
+            <th>
+              <spring:message code="bytrox.legal.privacypolicy.067" />
+            </th>
+            <th>
+              <spring:message code="bytrox.legal.privacypolicy.068" />
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <spring:message code="bytrox.legal.privacypolicy.069" />
+            </td>
+            <td>
+              <spring:message code="bytrox.legal.privacypolicy.070" />
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <spring:message code="bytrox.legal.privacypolicy.071" />
+            </td>
+            <td>
+              <spring:message code="bytrox.legal.privacypolicy.072" />
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <spring:message code="bytrox.legal.privacypolicy.073" />
+            </td>
+            <td>
+              <spring:message code="bytrox.legal.privacypolicy.074" />
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <spring:message code="bytrox.legal.privacypolicy.075" />
+            </td>
+            <td>
+              <spring:message code="bytrox.legal.privacypolicy.076" />
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <h2>
+        <spring:message code="bytrox.legal.privacypolicy.077" />
+      </h2>
+      <p>
+        <spring:message code="bytrox.legal.privacypolicy.078" />
+      </p>
+      <h2>
+        <spring:message code="bytrox.legal.privacypolicy.079" />
+      </h2>
+      <p>
+        <spring:message code="bytrox.legal.privacypolicy.080" />
+      </p>
+      <h2>
+        <spring:message code="bytrox.legal.privacypolicy.081" />
+      </h2>
+      <p>
+        <spring:message code="bytrox.legal.privacypolicy.082" />
+      </p>
+      <h2>
+        <spring:message code="bytrox.legal.privacypolicy.083" />
+      </h2>
+      <table class="policy-table">
+        <thead>
+          <tr>
+            <th>
+              <spring:message code="bytrox.legal.privacypolicy.084" />
+            </th>
+            <th>
+              <spring:message code="bytrox.legal.privacypolicy.085" />
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <spring:message code="bytrox.legal.privacypolicy.086" />
+            </td>
+            <td>
+              <spring:message code="bytrox.legal.privacypolicy.087" />
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <spring:message code="bytrox.legal.privacypolicy.088" />
+            </td>
+            <td>
+              <spring:message code="bytrox.legal.privacypolicy.089" />
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <spring:message code="bytrox.legal.privacypolicy.090" />
+            </td>
+            <td>
+              <spring:message code="bytrox.legal.privacypolicy.091" />
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <spring:message code="bytrox.legal.privacypolicy.092" />
+            </td>
+            <td>
+              <spring:message code="bytrox.legal.privacypolicy.093" />
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <spring:message code="bytrox.legal.privacypolicy.094" />
+            </td>
+            <td>
+              <spring:message code="bytrox.legal.privacypolicy.095" />
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <h2>
+        <spring:message code="bytrox.legal.privacypolicy.096" />
+      </h2>
+      <p>
+        <spring:message code="bytrox.legal.privacypolicy.097" />
+      </p>
+      <h2>
+        <spring:message code="bytrox.legal.privacypolicy.098" />
+      </h2>
+      <p>
+        <spring:message code="bytrox.legal.privacypolicy.099" />
+      </p>
+      <h2>
+        <spring:message code="bytrox.legal.privacypolicy.100" />
+      </h2>
+      <p>
+        <spring:message code="bytrox.legal.privacypolicy.101" /> <a href="mailto:support@bytroxfx.com">
+          <spring:message code="bytrox.legal.privacypolicy.102" />
+        </a>.
+      </p>
+    </div>
+  </section>
 </main>
 <jsp:include page="../frame/bytroxFooter.jsp" />

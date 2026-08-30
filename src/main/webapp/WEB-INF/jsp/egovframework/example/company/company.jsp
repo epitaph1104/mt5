@@ -1,14 +1,176 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <jsp:include page="../frame/bytroxHeader.jsp" />
-<main><section class="page-space about-intro"><div class="narrow"><h1 class="section-title">About</h1><p class="section-lead">Bytrox Global Limited empowers traders with a complete gateway to the most dynamic financial markets. Access over 100 instruments, enjoy fast execution, and benefit from transparent, low-cost trading conditions. Experience how Bytrox enhances your trading performance and supports your pursuit of long-term financial success.</p><div class="about-features"><article class="about-feature"><img src="${ctx}/images/about-competitive.svg" alt=""><h3>Competitive</h3><p>Tight spreads from 0.00 pips.</p></article><article class="about-feature"><img src="${ctx}/images/about-transparent.svg" alt=""><h3>Transparent</h3><p>Institutional-grade liquidity.</p></article><article class="about-feature"><img src="${ctx}/images/about-fast.svg" alt=""><h3>Fast Order</h3><p>Ultra-low latency via LD4.</p></article><article class="about-feature"><img src="${ctx}/images/about-flexible.svg" alt=""><h3>Flexible</h3><p>Ideal for scalping and EAs.</p></article></div></div></section><section class="section"><div class="narrow"><article class="partner-banner"><div><h2>Your Global Trading Partner</h2><p>We empower traders with a seamless experience in global financial markets. From Forex to Indices and Commodities, trade CFDs from a single, advanced platform. What sets us apart? Competitive pricing, fast execution, cutting-edge tools, and dedicated support.</p></div></article></div></section><section class="section"><div class="narrow about-power"><img src="${ctx}/images/about-power.png" alt="Trading on desktop and mobile"><h2 class="section-title">Explore the Powerful</h2><div class="power-grid">
-  <article class="power-item"><img src="${ctx}/images/about-timer.svg" alt=""><h3>Market notifications</h3><p>Stay informed with price alerts and account updates.</p></article>
-  <article class="power-item"><img src="${ctx}/images/about-bars.svg" alt=""><h3>Technical indicators</h3><p>Use built-in analysis tools to support your decisions.</p></article>
-  <article class="power-item"><img src="${ctx}/images/about-clock.svg" alt=""><h3>Multiple timeframes</h3><p>View the market from minutes to months.</p></article>
-  <article class="power-item"><img src="${ctx}/images/about-click.svg" alt=""><h3>Pending orders</h3><p>Plan entries in advance and trade when your level is reached.</p></article>
-  <article class="power-item"><img src="${ctx}/images/about-trend.svg" alt=""><h3>One-click trading</h3><p>Open and close positions efficiently.</p></article>
-  <article class="power-item"><img src="${ctx}/images/about-gear.svg" alt=""><h3>Automated trading</h3><p>Use Expert Advisors to implement your rules.</p></article>
-  <article class="power-item"><img src="${ctx}/images/about-signal.svg" alt=""><h3>Trading signals</h3><p>Explore integrated signals for market ideas.</p></article>
-  <article class="power-item"><img src="${ctx}/images/about-globe.svg" alt=""><h3>Intuitive interface</h3><p>Everything you need, organized for trading.</p></article>
-</div><a class="btn btn-primary mt40" href="${ctx}/${siteLang}/metaTrader5">Explore MT5 Features</a></div></section><section class="section"><div class="narrow"><h2 class="section-title">Fast account opening in</h2><div class="opening-3"><article><img src="${ctx}/images/about-register.svg" alt=""><h3>Register</h3><p>Choose account type and complete our fast and secure application form</p></article><article><img src="${ctx}/images/about-transparent.svg" alt=""><h3>Fund</h3><p>Fund your live account using a wide range of funding methods</p></article><article><img src="${ctx}/images/about-trade.svg" alt=""><h3>Trade</h3><p>Start trading on your live account and access +100 instruments across our platforms</p></article></div><div class="center mt40"><a class="btn btn-primary" href="${ctx}/${siteLang}/account-types">OPEN ACCOUNT</a></div></div></section></main>
+<main>
+  <section class="page-space about-intro">
+    <div class="narrow">
+      <h1 class="section-title">
+        <spring:message code="bytrox.company.company.001" />
+      </h1>
+      <p class="section-lead">
+        <spring:message code="bytrox.company.company.002" />
+      </p>
+      <div class="about-features">
+        <article class="about-feature"><img src="${ctx}/images/about-competitive.svg" alt="">
+          <h3>
+            <spring:message code="bytrox.company.company.003" />
+          </h3>
+          <p>
+            <spring:message code="bytrox.company.company.004" />
+          </p>
+        </article>
+        <article class="about-feature"><img src="${ctx}/images/about-transparent.svg" alt="">
+          <h3>
+            <spring:message code="bytrox.company.company.005" />
+          </h3>
+          <p>
+            <spring:message code="bytrox.company.company.006" />
+          </p>
+        </article>
+        <article class="about-feature"><img src="${ctx}/images/about-fast.svg" alt="">
+          <h3>
+            <spring:message code="bytrox.company.company.007" />
+          </h3>
+          <p>
+            <spring:message code="bytrox.company.company.008" />
+          </p>
+        </article>
+        <article class="about-feature"><img src="${ctx}/images/about-flexible.svg" alt="">
+          <h3>
+            <spring:message code="bytrox.company.company.009" />
+          </h3>
+          <p>
+            <spring:message code="bytrox.company.company.010" />
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+  <section class="section">
+    <div class="narrow">
+      <article class="partner-banner">
+        <div>
+          <h2>
+            <spring:message code="bytrox.company.company.011" />
+          </h2>
+          <p>
+            <spring:message code="bytrox.company.company.012" />
+          </p>
+        </div>
+      </article>
+    </div>
+  </section>
+  <section class="section">
+    <div class="narrow about-power"><img src="${ctx}/images/about-power.png" alt="Trading on desktop and mobile">
+      <h2 class="section-title">
+        <spring:message code="bytrox.company.company.013" />
+      </h2>
+      <div class="power-grid">
+        <article class="power-item"><img src="${ctx}/images/about-timer.svg" alt="">
+          <h3>
+            <spring:message code="bytrox.company.company.014" />
+          </h3>
+          <p>
+            <spring:message code="bytrox.company.company.015" />
+          </p>
+        </article>
+        <article class="power-item"><img src="${ctx}/images/about-bars.svg" alt="">
+          <h3>
+            <spring:message code="bytrox.company.company.016" />
+          </h3>
+          <p>
+            <spring:message code="bytrox.company.company.017" />
+          </p>
+        </article>
+        <article class="power-item"><img src="${ctx}/images/about-clock.svg" alt="">
+          <h3>
+            <spring:message code="bytrox.company.company.018" />
+          </h3>
+          <p>
+            <spring:message code="bytrox.company.company.019" />
+          </p>
+        </article>
+        <article class="power-item"><img src="${ctx}/images/about-click.svg" alt="">
+          <h3>
+            <spring:message code="bytrox.company.company.020" />
+          </h3>
+          <p>
+            <spring:message code="bytrox.company.company.021" />
+          </p>
+        </article>
+        <article class="power-item"><img src="${ctx}/images/about-trend.svg" alt="">
+          <h3>
+            <spring:message code="bytrox.company.company.022" />
+          </h3>
+          <p>
+            <spring:message code="bytrox.company.company.023" />
+          </p>
+        </article>
+        <article class="power-item"><img src="${ctx}/images/about-gear.svg" alt="">
+          <h3>
+            <spring:message code="bytrox.company.company.024" />
+          </h3>
+          <p>
+            <spring:message code="bytrox.company.company.025" />
+          </p>
+        </article>
+        <article class="power-item"><img src="${ctx}/images/about-signal.svg" alt="">
+          <h3>
+            <spring:message code="bytrox.company.company.026" />
+          </h3>
+          <p>
+            <spring:message code="bytrox.company.company.027" />
+          </p>
+        </article>
+        <article class="power-item"><img src="${ctx}/images/about-globe.svg" alt="">
+          <h3>
+            <spring:message code="bytrox.company.company.028" />
+          </h3>
+          <p>
+            <spring:message code="bytrox.company.company.029" />
+          </p>
+        </article>
+      </div><a class="btn btn-primary mt40" href="${ctx}/${siteLang}/metaTrader5">
+        <spring:message code="bytrox.company.company.030" />
+      </a>
+    </div>
+  </section>
+  <section class="section">
+    <div class="narrow">
+      <h2 class="section-title">
+        <spring:message code="bytrox.company.company.031" />
+      </h2>
+      <div class="opening-3">
+        <article><img src="${ctx}/images/about-register.svg" alt="">
+          <h3>
+            <spring:message code="bytrox.company.company.032" />
+          </h3>
+          <p>
+            <spring:message code="bytrox.company.company.033" />
+          </p>
+        </article>
+        <article><img src="${ctx}/images/about-transparent.svg" alt="">
+          <h3>
+            <spring:message code="bytrox.company.company.034" />
+          </h3>
+          <p>
+            <spring:message code="bytrox.company.company.035" />
+          </p>
+        </article>
+        <article><img src="${ctx}/images/about-trade.svg" alt="">
+          <h3>
+            <spring:message code="bytrox.company.company.036" />
+          </h3>
+          <p>
+            <spring:message code="bytrox.company.company.037" />
+          </p>
+        </article>
+      </div>
+      <div class="center mt40"><a class="btn btn-primary" href="${ctx}/${siteLang}/account-types">
+          <spring:message code="bytrox.company.company.038" />
+        </a></div>
+    </div>
+  </section>
+</main>
 <jsp:include page="../frame/bytroxFooter.jsp" />

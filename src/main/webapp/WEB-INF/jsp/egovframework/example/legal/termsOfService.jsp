@@ -1,8 +1,90 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <jsp:include page="../frame/bytroxHeader.jsp" />
 <main class="terms-page">
-  <section class="legal-hero"><div class="narrow"><h1>Legal documentation</h1><p>Prior to opening an account with ByTrox you must ensure that you have read, understood and agree to the relevant legal documents below.</p><div class="legal-hero-actions"><a class="btn btn-light" href="${ctx}/${siteLang}/account-types">Start Trading</a><a class="btn btn-outline" href="#">Try Free Demo</a></div></div></section>
-  <section class="legal-documents"><div class="policy-container"><p class="legal-kicker">Legal documentation</p><h2>For all accounts</h2><div class="document-list"><article><span>ByTrox client agreement</span><a class="btn btn-primary" href="${ctx}/pdf/privacy-policy_bytrox.pdf" download>PDF Download</a></article><article><span>ByTrox conflicts of interest policy</span><a class="btn btn-primary" href="${ctx}/pdf/privacy-policy_bytrox.pdf" download>PDF Download</a></article><article><span>Terms and conditions</span><a class="btn btn-primary" href="${ctx}/pdf/privacy-policy_bytrox.pdf" download>PDF Download</a></article></div><p class="legal-kicker">Legal documentation</p><h2>For all CFD accounts</h2><div class="document-list"><article><span>ByTrox CFD privacy policy</span><a class="btn btn-primary" href="${ctx}/pdf/privacy-policy_bytrox.pdf" download>PDF Download</a></article><article><span>ByTrox best interest and order policy</span><a class="btn btn-primary" href="${ctx}/pdf/privacy-policy_bytrox.pdf" download>PDF Download</a></article></div></div></section>
-  <section class="dispute-section"><div class="policy-container"><h2>Dispute Resolution</h2><p>Should you wish to <a href="${ctx}/${siteLang}/cs/contactUS">make a complaint</a>, please follow the process outlined below. This will help us resolve your complaint in the most efficient manner possible.</p><p>First, gather all supporting documents relating to your complaint, consider the questions you want answered and decide what you would like us to do. Contact your account manager directly. If the issue cannot be resolved, ask for the matter to be referred to their manager or the Compliance department.</p><p>If your complaint remains unresolved, our Compliance department will review it and contact you directly. You can also contact the Compliance team by email at <a href="mailto:support@bytroxfx.com">support@bytroxfx.com</a>.</p><p>We aim to resolve most matters within 21 days. Some complaints are more complex and may take longer; where this occurs, we will keep you informed of our progress.</p></div></section>
+  <section class="legal-hero">
+    <div class="narrow">
+      <h1>
+        <spring:message code="bytrox.legal.termsofservice.001" />
+      </h1>
+      <p>
+        <spring:message code="bytrox.legal.termsofservice.002" />
+      </p>
+      <div class="legal-hero-actions"><a class="btn btn-light" href="${ctx}/${siteLang}/account-types">
+          <spring:message code="bytrox.legal.termsofservice.003" />
+        </a><a class="btn btn-outline" href="#">
+          <spring:message code="bytrox.legal.termsofservice.004" />
+        </a></div>
+    </div>
+  </section>
+  <section class="legal-documents">
+    <div class="policy-container">
+      <p class="legal-kicker">
+        <spring:message code="bytrox.legal.termsofservice.005" />
+      </p>
+      <h2>
+        <spring:message code="bytrox.legal.termsofservice.006" />
+      </h2>
+      <div class="document-list">
+        <article><span>
+            <spring:message code="bytrox.legal.termsofservice.007" />
+          </span><a class="btn btn-primary" href="${ctx}/pdf/privacy-policy_bytrox.pdf" download>
+            <spring:message code="bytrox.legal.termsofservice.008" />
+          </a></article>
+        <article><span>
+            <spring:message code="bytrox.legal.termsofservice.009" />
+          </span><a class="btn btn-primary" href="${ctx}/pdf/privacy-policy_bytrox.pdf" download>
+            <spring:message code="bytrox.legal.termsofservice.010" />
+          </a></article>
+        <article><span>
+            <spring:message code="bytrox.legal.termsofservice.011" />
+          </span><a class="btn btn-primary" href="${ctx}/pdf/privacy-policy_bytrox.pdf" download>
+            <spring:message code="bytrox.legal.termsofservice.012" />
+          </a></article>
+      </div>
+      <p class="legal-kicker">
+        <spring:message code="bytrox.legal.termsofservice.013" />
+      </p>
+      <h2>
+        <spring:message code="bytrox.legal.termsofservice.014" />
+      </h2>
+      <div class="document-list">
+        <article><span>
+            <spring:message code="bytrox.legal.termsofservice.015" />
+          </span><a class="btn btn-primary" href="${ctx}/pdf/privacy-policy_bytrox.pdf" download>
+            <spring:message code="bytrox.legal.termsofservice.016" />
+          </a></article>
+        <article><span>
+            <spring:message code="bytrox.legal.termsofservice.017" />
+          </span><a class="btn btn-primary" href="${ctx}/pdf/privacy-policy_bytrox.pdf" download>
+            <spring:message code="bytrox.legal.termsofservice.018" />
+          </a></article>
+      </div>
+    </div>
+  </section>
+  <section class="dispute-section">
+    <div class="policy-container">
+      <h2>
+        <spring:message code="bytrox.legal.termsofservice.019" />
+      </h2>
+      <p>
+        <spring:message code="bytrox.legal.termsofservice.020" /> <a href="${ctx}/${siteLang}/cs/contactUS">
+          <spring:message code="bytrox.legal.termsofservice.021" />
+        </a>
+        <spring:message code="bytrox.legal.termsofservice.022" />
+      </p>
+      <p>
+        <spring:message code="bytrox.legal.termsofservice.023" />
+      </p>
+      <p>
+        <spring:message code="bytrox.legal.termsofservice.024" /> <a href="mailto:support@bytroxfx.com">
+          <spring:message code="bytrox.legal.termsofservice.025" />
+        </a>.
+      </p>
+      <p>
+        <spring:message code="bytrox.legal.termsofservice.026" />
+      </p>
+    </div>
+  </section>
 </main>
 <jsp:include page="../frame/bytroxFooter.jsp" />

@@ -1,5 +1,87 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <jsp:include page="../frame/bytroxHeader.jsp" />
-<main><section class="page-space"><div class="narrow"><h1 class="section-title">Unlocking the Ideal Trading Windows<br><span class="green">in Forex Markets</span></h1><p class="section-lead">Identify the most active trading sessions and seize every opportunity with Bytrox professional market insights.</p><img src="${ctx}/images/trading-hours-map.png" alt="Global trading hours map" style="width:100%;margin:35px auto 55px"></div></section><section class="section"><div class="narrow"><h2 class="section-title">Watch Trading Hours</h2><div class="center hours-tabs"><button class="btn btn-primary">Forex</button> <button class="btn btn-light">Indices</button> <button class="btn btn-light">Commodities</button> <button class="btn btn-light">Metals</button></div><div style="overflow-x:auto"><table class="data-table"><thead><tr><th>Instrument</th><th>Trading Hours</th></tr></thead><tbody><tr><td class="">EURUSD, GBPUSD, USDJPY, USDCAD etc.</td><td class="">00:00 - 23:59 (Weekdays)</td></tr><tr><td class="">USDRUB</td><td class="">0:10 - 21:00 (Weekdays)</td></tr></tbody></table></div><p style="font-size:14px;margin-top:30px">Trading hours may change on public holidays and due to unexpected market conditions, such as volatility. For the latest information on trading hours for your selected instruments, refer to your MT5 terminal.</p></div></section><section class="cta cta-image"><div class="container"><div class="cta-copy"><h2>Start trading now!</h2><p>Spreads lower than ever! START with a trusted broker!</p></div><div class="cta-actions"><a class="btn btn-light" href="${ctx}/${siteLang}/account-types">Open Live Account</a><a class="btn" style="background:rgba(255,255,255,.2);color:#fff" href="#">Try free demo</a></div></div></section></main>
+<main>
+  <section class="page-space">
+    <div class="narrow">
+      <h1 class="section-title">
+        <spring:message code="bytrox.trading.tradinghours.001" /><br><span class="green">
+          <spring:message code="bytrox.trading.tradinghours.002" />
+        </span>
+      </h1>
+      <p class="section-lead">
+        <spring:message code="bytrox.trading.tradinghours.003" />
+      </p><img src="${ctx}/images/trading-hours-map.png" alt="Global trading hours map" style="width:100%;margin:35px auto 55px">
+    </div>
+  </section>
+  <section class="section">
+    <div class="narrow">
+      <h2 class="section-title">
+        <spring:message code="bytrox.trading.tradinghours.004" />
+      </h2>
+      <div class="center hours-tabs"><button class="btn btn-primary">
+          <spring:message code="bytrox.trading.tradinghours.005" />
+        </button> <button class="btn btn-light">
+          <spring:message code="bytrox.trading.tradinghours.006" />
+        </button> <button class="btn btn-light">
+          <spring:message code="bytrox.trading.tradinghours.007" />
+        </button> <button class="btn btn-light">
+          <spring:message code="bytrox.trading.tradinghours.008" />
+        </button></div>
+      <div style="overflow-x:auto">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>
+                <spring:message code="bytrox.trading.tradinghours.009" />
+              </th>
+              <th>
+                <spring:message code="bytrox.trading.tradinghours.010" />
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="">
+                <spring:message code="bytrox.trading.tradinghours.011" />
+              </td>
+              <td class="">
+                <spring:message code="bytrox.trading.tradinghours.012" />
+              </td>
+            </tr>
+            <tr>
+              <td class="">
+                <spring:message code="bytrox.trading.tradinghours.013" />
+              </td>
+              <td class="">
+                <spring:message code="bytrox.trading.tradinghours.014" />
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p style="font-size:14px;margin-top:30px">
+        <spring:message code="bytrox.trading.tradinghours.015" />
+      </p>
+    </div>
+  </section>
+  <section class="cta cta-image">
+    <div class="container">
+      <div class="cta-copy">
+        <h2>
+          <spring:message code="bytrox.trading.tradinghours.016" />
+        </h2>
+        <p>
+          <spring:message code="bytrox.trading.tradinghours.017" />
+        </p>
+      </div>
+      <div class="cta-actions"><a class="btn btn-light" href="${ctx}/${siteLang}/account-types">
+          <spring:message code="bytrox.trading.tradinghours.018" />
+        </a><a class="btn" style="background:rgba(255,255,255,.2);color:#fff" href="#">
+          <spring:message code="bytrox.trading.tradinghours.019" />
+        </a></div>
+    </div>
+  </section>
+</main>
 <jsp:include page="../frame/bytroxFooter.jsp" />

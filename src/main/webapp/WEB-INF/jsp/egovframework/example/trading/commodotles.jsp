@@ -1,5 +1,216 @@
-﻿<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <jsp:include page="../frame/bytroxHeader.jsp" />
-<main><section class="page-space"><div class="narrow"><div class="eyebrow">THE FUTURE OF TRADING</div><h1 class="section-title">Why Trade Commodities with Bytrox?</h1><p class="section-lead">Commodities are vital to the global economy and offer strong diversification and inflation protection. Trade key raw materials that drive global growth and opportunity.</p><div class="feature-grid"><article class="feature"><div class="icon-circle"><img src="${ctx}/images/commodities-globe.svg" alt=""></div><h3>Global Market Access</h3><p>Trade commodities from major exchanges and global markets with ease.</p></article><article class="feature"><div class="icon-circle"><img src="${ctx}/images/commodities-dollar.svg" alt=""></div><h3>Competitive Spreads</h3><p>Enjoy ultra-competitive spreads starting from 0.03 on crude oil and other leading commodities.</p></article><article class="feature"><div class="icon-circle"><img src="${ctx}/images/commodities-trend.svg" alt=""></div><h3>Flexible Leverage</h3><p>Access leverage of up to 1:500 on selected commodity CFDs for greater trading control.</p></article><article class="feature"><div class="icon-circle"><img src="${ctx}/images/commodities-bars.svg" alt=""></div><h3>Diversified Investment</h3><p>Enhance your portfolio with commodities to hedge inflation and balance overall market risk.</p></article></div></div></section><section class="section section-soft"><div class="narrow"><h2 class="section-title">Available Commodity Categories</h2><p class="section-lead">Trade the world&#10003; ?leading markets with professional execution and competitive conditions.</p><div class="category-grid "><article class="category-card"><div class="icon-circle" style="background:#4785f0"><img src="${ctx}/images/commodities-droplet.svg" alt=""></div><h3>Energy</h3><p>Essential energy commodities that power the global economy.</p><small>&#10003; Crude Oil (WTI & Brent)<br>&#10003; Natural Gas<br>&#10003; Heating Oil<br>&#10003; Gasoline</small></article><article class="category-card"><div class="icon-circle" style="background:#21c99a"><img src="${ctx}/images/commodities-heart.svg" alt=""></div><h3>Agricultural</h3><p>Essential food commodities affected by weather, seasons, and global demand.</p><small>&#10003; Wheat<br>&#10003; Corn<br>&#10003; Soybeans<br>&#10003; Coffee</small></article><article class="category-card"><div class="icon-circle" style="background:#a94df0"><img src="${ctx}/images/commodities-flask.svg" alt=""></div><h3>Industrial Metals</h3><p>Base metals essential for construction, manufacturing, and infrastructure.</p><small>&#10003; Copper<br>&#10003; Aluminum<br>&#10003; Zinc<br>&#10003; Nickel</small></article></div></div></section><section class="section"><div class="narrow"><h2 class="section-title">Competitive Commodity Spreads</h2><p class="section-lead">Trade commodities with competitive spreads and flexible leverage across energy, agricultural, and industrial sectors.</p><div style="overflow-x:auto"><table class="data-table"><thead><tr><th>Commodity</th><th>Symbol</th><th>Typical Spread</th><th>Max Leverage</th></tr></thead><tbody><tr><td class="">Crude Oil (WTI)</td><td class="">USOIL</td><td class="highlight">0.03</td><td class="">1:500</td></tr><tr><td class="">Brent Oil</td><td class="">UKOIL</td><td class="highlight">0.03</td><td class="">1:500</td></tr><tr><td class="">Natural Gas</td><td class="">NATGAS</td><td class="highlight">0.030</td><td class="">1:100</td></tr><tr><td class="">Copper</td><td class="">COPPER</td><td class="highlight">0.004</td><td class="">1:200</td></tr><tr><td class="">Wheat</td><td class="">WHEAT</td><td class="highlight">2.0</td><td class="">1:100</td></tr></tbody></table></div><aside class="notice-box"><b>Important Notice:</b> The spreads and leverage ratios shown above are typical/indicative values for illustration purposes only. Actual spreads may vary based on market conditions, volatility, liquidity, and time of day. Spreads may widen significantly during major news events, market openings, or periods of low liquidity. Trading conditions are subject to change without notice.</aside><div class="center"><a class="btn btn-primary" href="${ctx}/${siteLang}/account-types">View All Account Types</a></div></div></section><section class="cta"><div class="container"><h2>Ready to Start Commodities Trading?</h2><p>Diversify your portfolio with commodities trading and gain exposure to essential global markets.</p><a class="btn btn-light" href="${ctx}/${siteLang}/account-types">Open Live Account</a><a class="btn" style="background:rgba(255,255,255,.2);color:#fff" href="#">Try free demo</a></div></section></main>
+<main>
+  <section class="page-space">
+    <div class="narrow">
+      <div class="eyebrow">
+        <spring:message code="bytrox.trading.commodotles.001" />
+      </div>
+      <h1 class="section-title">
+        <spring:message code="bytrox.trading.commodotles.002" />
+      </h1>
+      <p class="section-lead">
+        <spring:message code="bytrox.trading.commodotles.003" />
+      </p>
+      <div class="feature-grid">
+        <article class="feature">
+          <div class="icon-circle"><img src="${ctx}/images/commodities-globe.svg" alt=""></div>
+          <h3>
+            <spring:message code="bytrox.trading.commodotles.004" />
+          </h3>
+          <p>
+            <spring:message code="bytrox.trading.commodotles.005" />
+          </p>
+        </article>
+        <article class="feature">
+          <div class="icon-circle"><img src="${ctx}/images/commodities-dollar.svg" alt=""></div>
+          <h3>
+            <spring:message code="bytrox.trading.commodotles.006" />
+          </h3>
+          <p>
+            <spring:message code="bytrox.trading.commodotles.007" />
+          </p>
+        </article>
+        <article class="feature">
+          <div class="icon-circle"><img src="${ctx}/images/commodities-trend.svg" alt=""></div>
+          <h3>
+            <spring:message code="bytrox.trading.commodotles.008" />
+          </h3>
+          <p>
+            <spring:message code="bytrox.trading.commodotles.009" />
+          </p>
+        </article>
+        <article class="feature">
+          <div class="icon-circle"><img src="${ctx}/images/commodities-bars.svg" alt=""></div>
+          <h3>
+            <spring:message code="bytrox.trading.commodotles.010" />
+          </h3>
+          <p>
+            <spring:message code="bytrox.trading.commodotles.011" />
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+  <section class="section section-soft">
+    <div class="narrow">
+      <h2 class="section-title">
+        <spring:message code="bytrox.trading.commodotles.012" />
+      </h2>
+      <p class="section-lead">
+        <spring:message code="bytrox.trading.commodotles.013" />
+      </p>
+      <div class="category-grid ">
+        <article class="category-card">
+          <div class="icon-circle" style="background:#4785f0"><img src="${ctx}/images/commodities-droplet.svg" alt=""></div>
+          <h3>
+            <spring:message code="bytrox.trading.commodotles.014" />
+          </h3>
+          <p>
+            <spring:message code="bytrox.trading.commodotles.015" />
+          </p><small>
+            <spring:message code="bytrox.trading.commodotles.016" /><br>
+            <spring:message code="bytrox.trading.commodotles.017" /><br>
+            <spring:message code="bytrox.trading.commodotles.018" /><br>
+            <spring:message code="bytrox.trading.commodotles.019" />
+          </small>
+        </article>
+        <article class="category-card">
+          <div class="icon-circle" style="background:#21c99a"><img src="${ctx}/images/commodities-heart.svg" alt=""></div>
+          <h3>
+            <spring:message code="bytrox.trading.commodotles.020" />
+          </h3>
+          <p>
+            <spring:message code="bytrox.trading.commodotles.021" />
+          </p><small>
+            <spring:message code="bytrox.trading.commodotles.022" /><br>
+            <spring:message code="bytrox.trading.commodotles.023" /><br>
+            <spring:message code="bytrox.trading.commodotles.024" /><br>
+            <spring:message code="bytrox.trading.commodotles.025" />
+          </small>
+        </article>
+        <article class="category-card">
+          <div class="icon-circle" style="background:#a94df0"><img src="${ctx}/images/commodities-flask.svg" alt=""></div>
+          <h3>
+            <spring:message code="bytrox.trading.commodotles.026" />
+          </h3>
+          <p>
+            <spring:message code="bytrox.trading.commodotles.027" />
+          </p><small>
+            <spring:message code="bytrox.trading.commodotles.028" /><br>
+            <spring:message code="bytrox.trading.commodotles.029" /><br>
+            <spring:message code="bytrox.trading.commodotles.030" /><br>
+            <spring:message code="bytrox.trading.commodotles.031" />
+          </small>
+        </article>
+      </div>
+    </div>
+  </section>
+  <section class="section">
+    <div class="narrow">
+      <h2 class="section-title">
+        <spring:message code="bytrox.trading.commodotles.032" />
+      </h2>
+      <p class="section-lead">
+        <spring:message code="bytrox.trading.commodotles.033" />
+      </p>
+      <div style="overflow-x:auto">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>
+                <spring:message code="bytrox.trading.commodotles.034" />
+              </th>
+              <th>
+                <spring:message code="bytrox.trading.commodotles.035" />
+              </th>
+              <th>
+                <spring:message code="bytrox.trading.commodotles.036" />
+              </th>
+              <th>
+                <spring:message code="bytrox.trading.commodotles.037" />
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="">
+                <spring:message code="bytrox.trading.commodotles.038" />
+              </td>
+              <td class="">
+                <spring:message code="bytrox.trading.commodotles.039" />
+              </td>
+              <td class="highlight">0.03</td>
+              <td class="">1:500</td>
+            </tr>
+            <tr>
+              <td class="">
+                <spring:message code="bytrox.trading.commodotles.040" />
+              </td>
+              <td class="">
+                <spring:message code="bytrox.trading.commodotles.041" />
+              </td>
+              <td class="highlight">0.03</td>
+              <td class="">1:500</td>
+            </tr>
+            <tr>
+              <td class="">
+                <spring:message code="bytrox.trading.commodotles.042" />
+              </td>
+              <td class="">
+                <spring:message code="bytrox.trading.commodotles.043" />
+              </td>
+              <td class="highlight">0.030</td>
+              <td class="">1:100</td>
+            </tr>
+            <tr>
+              <td class="">
+                <spring:message code="bytrox.trading.commodotles.044" />
+              </td>
+              <td class="">
+                <spring:message code="bytrox.trading.commodotles.045" />
+              </td>
+              <td class="highlight">0.004</td>
+              <td class="">1:200</td>
+            </tr>
+            <tr>
+              <td class="">
+                <spring:message code="bytrox.trading.commodotles.046" />
+              </td>
+              <td class="">
+                <spring:message code="bytrox.trading.commodotles.047" />
+              </td>
+              <td class="highlight">2.0</td>
+              <td class="">1:100</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <aside class="notice-box"><b>
+          <spring:message code="bytrox.trading.commodotles.048" />
+        </b>
+        <spring:message code="bytrox.trading.commodotles.049" />
+      </aside>
+      <div class="center"><a class="btn btn-primary" href="${ctx}/${siteLang}/account-types">
+          <spring:message code="bytrox.trading.commodotles.050" />
+        </a></div>
+    </div>
+  </section>
+  <section class="cta">
+    <div class="container">
+      <h2>
+        <spring:message code="bytrox.trading.commodotles.051" />
+      </h2>
+      <p>
+        <spring:message code="bytrox.trading.commodotles.052" />
+      </p><a class="btn btn-light" href="${ctx}/${siteLang}/account-types">
+        <spring:message code="bytrox.trading.commodotles.053" />
+      </a><a class="btn" style="background:rgba(255,255,255,.2);color:#fff" href="#">
+        <spring:message code="bytrox.trading.commodotles.054" />
+      </a>
+    </div>
+  </section>
+</main>
 <jsp:include page="../frame/bytroxFooter.jsp" />

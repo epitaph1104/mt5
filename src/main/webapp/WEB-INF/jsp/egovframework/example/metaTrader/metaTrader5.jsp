@@ -1,5 +1,124 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <jsp:include page="../frame/bytroxHeader.jsp" />
-<main><section><div class="narrow mt5-hero"><div><h1><span>MetaTrader 5</span>A Platform Built for Professionals</h1><p>MT5 delivers powerful analytics, versatile trading modes, and scalable strategy options &mdash; making it the preferred platform for traders seeking precision, flexibility, and performance at every level.</p><a class="btn btn-primary" href="#">Download for MacBook</a> <a class="btn btn-dark" href="#">Download for Windows</a></div><img src="${ctx}/images/mt5-hero.png" alt="MetaTrader 5 trading platform devices"></div></section><section class="section"><div class="narrow"><h2 style="font-size:38px">Why Traders Choose MT5</h2><div class="choose-grid"><article class="choose-card"><img src="${ctx}/images/mt5-insights.svg" alt=""><h3>Advanced Market Insights</h3><p>Access 44 analytical tools, 38 built-in indicators, and 21 customizable timeframes &mdash; empowering you to perform deep market analysis.</p></article><article class="choose-card"><img src="${ctx}/images/mt5-execution.svg" alt=""><h3>Versatile Execution Modes</h3><p>MT5 offers multiple order types and execution models, allowing traders to adapt strategies and manage multiple positions efficiently in real time.</p></article><article class="choose-card"><img src="${ctx}/images/mt5-strategy.svg" alt=""><h3>Strategy Optimization Engine</h3><p>Test and optimize your trading strategies using MT5&#39;s integrated multi-currency backtesting system powered by historical data for evaluation.</p></article><article class="choose-card"><img src="${ctx}/images/mt5-flexibility.svg" alt=""><h3>Cross-Market Flexibility</h3><p>Trade across diverse markets &mdash; including forex, stocks, and futures &mdash; with a single, scalable platform built to support all trading styles and instruments.</p></article></div></div></section><section class="mt5-platform"><div class="narrow"><img src="${ctx}/images/economic-devices.png" alt="MetaTrader 5 on laptop and mobile"><h2 class="section-title">Trade on MetaTrader 5 Platform</h2><p class="section-lead">Engage global markets effortlessly with MT5&#39;s powerful charting suite, ultra-tight spreads, and professional-grade analysis tools &mdash; all wrapped in an intuitive, easy-to-use interface.</p><div class="download-row"><a class="btn btn-primary">MT5 for Windows</a><a class="btn btn-primary">MT5 for MacOS</a><a class="btn btn-primary">MT5 for Android</a><a class="btn btn-primary">MT5 for IOS</a></div><a href="${ctx}/${siteLang}/account-types" class="green" style="display:inline-block;margin-top:23px">Explore the account types</a></div></section><section class="opening"><div class="narrow"><h2>Fast account opening in<br>3 simple steps</h2><div class="opening-grid"><article class="opening-card"><img src="${ctx}/images/mt5-register.svg" alt=""><h3>Register</h3><p>Choose account type and complete our fast and secure application form</p></article><article class="opening-card"><img src="${ctx}/images/mt5-fund.svg" alt=""><h3>Fund</h3><p>Fund your live account using a wide range of funding methods</p></article><article class="opening-card"><img src="${ctx}/images/mt5-trade.svg" alt=""><h3>Trade</h3><p>Start trading on your live account and access +100 instruments across our platforms</p></article></div><div class="center"><a class="btn btn-primary" href="${ctx}/${siteLang}/account-types">OPEN ACCOUNT</a></div></div></section></main>
+<main>
+  <section>
+    <div class="narrow mt5-hero">
+      <div>
+        <h1><span>
+            <spring:message code="bytrox.metatrader.metatrader5.001" />
+          </span>
+          <spring:message code="bytrox.metatrader.metatrader5.002" />
+        </h1>
+        <p>
+          <spring:message code="bytrox.metatrader.metatrader5.003" />
+        </p><a class="btn btn-primary" href="#">
+          <spring:message code="bytrox.metatrader.metatrader5.004" />
+        </a> <a class="btn btn-dark" href="#">
+          <spring:message code="bytrox.metatrader.metatrader5.005" />
+        </a>
+      </div><img src="${ctx}/images/mt5-hero.png" alt="MetaTrader 5 trading platform devices">
+    </div>
+  </section>
+  <section class="section">
+    <div class="narrow">
+      <h2 style="font-size:38px">
+        <spring:message code="bytrox.metatrader.metatrader5.006" />
+      </h2>
+      <div class="choose-grid">
+        <article class="choose-card"><img src="${ctx}/images/mt5-insights.svg" alt="">
+          <h3>
+            <spring:message code="bytrox.metatrader.metatrader5.007" />
+          </h3>
+          <p>
+            <spring:message code="bytrox.metatrader.metatrader5.008" />
+          </p>
+        </article>
+        <article class="choose-card"><img src="${ctx}/images/mt5-execution.svg" alt="">
+          <h3>
+            <spring:message code="bytrox.metatrader.metatrader5.009" />
+          </h3>
+          <p>
+            <spring:message code="bytrox.metatrader.metatrader5.010" />
+          </p>
+        </article>
+        <article class="choose-card"><img src="${ctx}/images/mt5-strategy.svg" alt="">
+          <h3>
+            <spring:message code="bytrox.metatrader.metatrader5.011" />
+          </h3>
+          <p>
+            <spring:message code="bytrox.metatrader.metatrader5.012" />
+          </p>
+        </article>
+        <article class="choose-card"><img src="${ctx}/images/mt5-flexibility.svg" alt="">
+          <h3>
+            <spring:message code="bytrox.metatrader.metatrader5.013" />
+          </h3>
+          <p>
+            <spring:message code="bytrox.metatrader.metatrader5.014" />
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+  <section class="mt5-platform">
+    <div class="narrow"><img src="${ctx}/images/economic-devices.png" alt="MetaTrader 5 on laptop and mobile">
+      <h2 class="section-title">
+        <spring:message code="bytrox.metatrader.metatrader5.015" />
+      </h2>
+      <p class="section-lead">
+        <spring:message code="bytrox.metatrader.metatrader5.016" />
+      </p>
+      <div class="download-row"><a class="btn btn-primary">
+          <spring:message code="bytrox.metatrader.metatrader5.017" />
+        </a><a class="btn btn-primary">
+          <spring:message code="bytrox.metatrader.metatrader5.018" />
+        </a><a class="btn btn-primary">
+          <spring:message code="bytrox.metatrader.metatrader5.019" />
+        </a><a class="btn btn-primary">
+          <spring:message code="bytrox.metatrader.metatrader5.020" />
+        </a></div><a href="${ctx}/${siteLang}/account-types" class="green" style="display:inline-block;margin-top:23px">
+        <spring:message code="bytrox.metatrader.metatrader5.021" />
+      </a>
+    </div>
+  </section>
+  <section class="opening">
+    <div class="narrow">
+      <h2>
+        <spring:message code="bytrox.metatrader.metatrader5.022" /><br>
+        <spring:message code="bytrox.metatrader.metatrader5.023" />
+      </h2>
+      <div class="opening-grid">
+        <article class="opening-card"><img src="${ctx}/images/mt5-register.svg" alt="">
+          <h3>
+            <spring:message code="bytrox.metatrader.metatrader5.024" />
+          </h3>
+          <p>
+            <spring:message code="bytrox.metatrader.metatrader5.025" />
+          </p>
+        </article>
+        <article class="opening-card"><img src="${ctx}/images/mt5-fund.svg" alt="">
+          <h3>
+            <spring:message code="bytrox.metatrader.metatrader5.026" />
+          </h3>
+          <p>
+            <spring:message code="bytrox.metatrader.metatrader5.027" />
+          </p>
+        </article>
+        <article class="opening-card"><img src="${ctx}/images/mt5-trade.svg" alt="">
+          <h3>
+            <spring:message code="bytrox.metatrader.metatrader5.028" />
+          </h3>
+          <p>
+            <spring:message code="bytrox.metatrader.metatrader5.029" />
+          </p>
+        </article>
+      </div>
+      <div class="center"><a class="btn btn-primary" href="${ctx}/${siteLang}/account-types">
+          <spring:message code="bytrox.metatrader.metatrader5.030" />
+        </a></div>
+    </div>
+  </section>
+</main>
 <jsp:include page="../frame/bytroxFooter.jsp" />

@@ -1,5 +1,218 @@
-﻿<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <jsp:include page="../frame/bytroxHeader.jsp" />
-<main><section class="page-space"><div class="narrow"><div class="eyebrow">THE FUTURE OF TRADING</div><h1 class="section-title">Why Trade Metals with Bytrox?</h1><p class="section-lead">Precious metals have long been recognized as reliable stores of value. Trade these safe-haven assets to diversify your portfolio and manage risk effectively.</p><div class="feature-grid"><article class="feature"><div class="icon-circle"><img src="${ctx}/images/metals-cube.svg" alt=""></div><h3>Safe Haven Assets</h3><p>Use gold, silver, and other metals to hedge against inflation and market volatility.</p></article><article class="feature"><div class="icon-circle"><img src="${ctx}/images/metals-dollar.svg" alt=""></div><h3>Ultra-Tight Spreads</h3><p>Enjoy competitive pricing starting from 0.20 on gold with full transparency and no hidden costs.</p></article><article class="feature"><div class="icon-circle"><img src="${ctx}/images/metals-trend.svg" alt=""></div><h3>Flexible Leverage</h3><p>Access leverage up to 1:500 on gold and other precious metals for greater trading flexibility.</p></article><article class="feature"><div class="icon-circle"><img src="${ctx}/images/metals-clock.svg" alt=""></div><h3>24/5 Trading</h3><p>Trade metals 24 hours a day, 5 days a week across major global sessions.</p></article></div></div></section><section class="section section-soft"><div class="narrow"><h2 class="section-title">Available Precious Metals</h2><p class="section-lead">Trade the world&#10003; ?leading markets with professional execution and competitive conditions.</p><div class="category-grid four"><article class="category-card"><div class="icon-circle" style="background:#4785f0"><img src="${ctx}/images/metals-dollar.svg" alt=""></div><h3>Gold</h3><p>The ultimate store of value and safe-haven asset during economic uncertainty.</p><small>&#10003; XAU/USD (Spot Gold)<br>&#10003; Spread from 0.20<br>&#10003; Leverage up to 1:1000<br>&#10003; 24/5 Trading</small></article><article class="category-card"><div class="icon-circle" style="background:#21c99a"><img src="${ctx}/images/metals-cube.svg" alt=""></div><h3>Silver</h3><p>Industrial and investment demand drives silver&#10003; ?unique market dynamics.</p><small>&#10003; XAG/USD (Spot Silver)<br>&#10003; Spread from 0.025<br>&#10003; Leverage up to 1:500<br>&#10003; Highly Volatile</small></article><article class="category-card"><div class="icon-circle" style="background:#a94df0"><img src="${ctx}/images/metals-platinum.svg" alt=""></div><h3>Platinum</h3><p>Rare precious metal with automotive and jewelry industry applications.</p><small>&#10003; XPT/USD (Spot Platinum)<br>&#10003; Spread from 3.0<br>&#10003; Leverage up to 1:200</small></article><article class="category-card"><div class="icon-circle" style="background:#f4b80d"><img src="${ctx}/images/metals-palladium.svg" alt=""></div><h3>Palladium</h3><p>Critical for automotive catalysts with limited supply and strong demand.</p><small>&#10003; XPD/USD (Spot Palladium)<br>&#10003; Spread from 5.0<br>&#10003; Leverage up to 1:200</small></article></div></div></section><section class="section"><div class="narrow"><h2 class="section-title">Competitive Metals Spreads</h2><p class="section-lead">Trade precious metals with some of the tightest spreads in the industry and flexible leverage options.</p><div style="overflow-x:auto"><table class="data-table"><thead><tr><th>Metal</th><th>Symbol</th><th>Typical Spread</th><th>Max Leverage</th></tr></thead><tbody><tr><td class="">Gold</td><td class="">XAU/USD</td><td class="highlight">0.20</td><td class="">1:1000</td></tr><tr><td class="">Silver</td><td class="">XAG/USD</td><td class="highlight">0.025</td><td class="">1:500</td></tr><tr><td class="">Platinum</td><td class="">XPT/USD</td><td class="highlight">3.0</td><td class="">1:200</td></tr><tr><td class="">Palladium</td><td class="">XPD/USD</td><td class="highlight">5.0</td><td class="">1:200</td></tr></tbody></table></div><aside class="notice-box"><b>Important Notice:</b> The spreads and leverage ratios shown above are typical/indicative values for illustration purposes only. Actual spreads may vary based on market conditions, volatility, liquidity, and time of day. Spreads may widen significantly during major news events, market openings, or periods of low liquidity. Trading conditions are subject to change without notice.</aside><div class="center"><a class="btn btn-primary" href="${ctx}/${siteLang}/account-types">View All Account Types</a></div></div></section><section class="cta"><div class="container"><h2>Ready to Start Metals Trading?</h2><p>Diversify your portfolio with precious metals trading and benefit from safe-haven assets during market volatility.</p><a class="btn btn-light" href="${ctx}/${siteLang}/account-types">Open Live Account</a><a class="btn" style="background:rgba(255,255,255,.2);color:#fff" href="#">Try free demo</a></div></section></main>
+<main>
+  <section class="page-space">
+    <div class="narrow">
+      <div class="eyebrow">
+        <spring:message code="bytrox.trading.metals.001" />
+      </div>
+      <h1 class="section-title">
+        <spring:message code="bytrox.trading.metals.002" />
+      </h1>
+      <p class="section-lead">
+        <spring:message code="bytrox.trading.metals.003" />
+      </p>
+      <div class="feature-grid">
+        <article class="feature">
+          <div class="icon-circle"><img src="${ctx}/images/metals-cube.svg" alt=""></div>
+          <h3>
+            <spring:message code="bytrox.trading.metals.004" />
+          </h3>
+          <p>
+            <spring:message code="bytrox.trading.metals.005" />
+          </p>
+        </article>
+        <article class="feature">
+          <div class="icon-circle"><img src="${ctx}/images/metals-dollar.svg" alt=""></div>
+          <h3>
+            <spring:message code="bytrox.trading.metals.006" />
+          </h3>
+          <p>
+            <spring:message code="bytrox.trading.metals.007" />
+          </p>
+        </article>
+        <article class="feature">
+          <div class="icon-circle"><img src="${ctx}/images/metals-trend.svg" alt=""></div>
+          <h3>
+            <spring:message code="bytrox.trading.metals.008" />
+          </h3>
+          <p>
+            <spring:message code="bytrox.trading.metals.009" />
+          </p>
+        </article>
+        <article class="feature">
+          <div class="icon-circle"><img src="${ctx}/images/metals-clock.svg" alt=""></div>
+          <h3>
+            <spring:message code="bytrox.trading.metals.010" />
+          </h3>
+          <p>
+            <spring:message code="bytrox.trading.metals.011" />
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+  <section class="section section-soft">
+    <div class="narrow">
+      <h2 class="section-title">
+        <spring:message code="bytrox.trading.metals.012" />
+      </h2>
+      <p class="section-lead">
+        <spring:message code="bytrox.trading.metals.013" />
+      </p>
+      <div class="category-grid four">
+        <article class="category-card">
+          <div class="icon-circle" style="background:#4785f0"><img src="${ctx}/images/metals-dollar.svg" alt=""></div>
+          <h3>
+            <spring:message code="bytrox.trading.metals.014" />
+          </h3>
+          <p>
+            <spring:message code="bytrox.trading.metals.015" />
+          </p><small>
+            <spring:message code="bytrox.trading.metals.016" /><br>
+            <spring:message code="bytrox.trading.metals.017" /><br>
+            <spring:message code="bytrox.trading.metals.018" /><br>
+            <spring:message code="bytrox.trading.metals.019" />
+          </small>
+        </article>
+        <article class="category-card">
+          <div class="icon-circle" style="background:#21c99a"><img src="${ctx}/images/metals-cube.svg" alt=""></div>
+          <h3>
+            <spring:message code="bytrox.trading.metals.020" />
+          </h3>
+          <p>
+            <spring:message code="bytrox.trading.metals.021" />
+          </p><small>
+            <spring:message code="bytrox.trading.metals.022" /><br>
+            <spring:message code="bytrox.trading.metals.023" /><br>
+            <spring:message code="bytrox.trading.metals.024" /><br>
+            <spring:message code="bytrox.trading.metals.025" />
+          </small>
+        </article>
+        <article class="category-card">
+          <div class="icon-circle" style="background:#a94df0"><img src="${ctx}/images/metals-platinum.svg" alt=""></div>
+          <h3>
+            <spring:message code="bytrox.trading.metals.026" />
+          </h3>
+          <p>
+            <spring:message code="bytrox.trading.metals.027" />
+          </p><small>
+            <spring:message code="bytrox.trading.metals.028" /><br>
+            <spring:message code="bytrox.trading.metals.029" /><br>
+            <spring:message code="bytrox.trading.metals.030" />
+          </small>
+        </article>
+        <article class="category-card">
+          <div class="icon-circle" style="background:#f4b80d"><img src="${ctx}/images/metals-palladium.svg" alt=""></div>
+          <h3>
+            <spring:message code="bytrox.trading.metals.031" />
+          </h3>
+          <p>
+            <spring:message code="bytrox.trading.metals.032" />
+          </p><small>
+            <spring:message code="bytrox.trading.metals.033" /><br>
+            <spring:message code="bytrox.trading.metals.034" /><br>
+            <spring:message code="bytrox.trading.metals.035" />
+          </small>
+        </article>
+      </div>
+    </div>
+  </section>
+  <section class="section">
+    <div class="narrow">
+      <h2 class="section-title">
+        <spring:message code="bytrox.trading.metals.036" />
+      </h2>
+      <p class="section-lead">
+        <spring:message code="bytrox.trading.metals.037" />
+      </p>
+      <div style="overflow-x:auto">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>
+                <spring:message code="bytrox.trading.metals.038" />
+              </th>
+              <th>
+                <spring:message code="bytrox.trading.metals.039" />
+              </th>
+              <th>
+                <spring:message code="bytrox.trading.metals.040" />
+              </th>
+              <th>
+                <spring:message code="bytrox.trading.metals.041" />
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="">
+                <spring:message code="bytrox.trading.metals.042" />
+              </td>
+              <td class="">
+                <spring:message code="bytrox.trading.metals.043" />
+              </td>
+              <td class="highlight">0.20</td>
+              <td class="">1:1000</td>
+            </tr>
+            <tr>
+              <td class="">
+                <spring:message code="bytrox.trading.metals.044" />
+              </td>
+              <td class="">
+                <spring:message code="bytrox.trading.metals.045" />
+              </td>
+              <td class="highlight">0.025</td>
+              <td class="">1:500</td>
+            </tr>
+            <tr>
+              <td class="">
+                <spring:message code="bytrox.trading.metals.046" />
+              </td>
+              <td class="">
+                <spring:message code="bytrox.trading.metals.047" />
+              </td>
+              <td class="highlight">3.0</td>
+              <td class="">1:200</td>
+            </tr>
+            <tr>
+              <td class="">
+                <spring:message code="bytrox.trading.metals.048" />
+              </td>
+              <td class="">
+                <spring:message code="bytrox.trading.metals.049" />
+              </td>
+              <td class="highlight">5.0</td>
+              <td class="">1:200</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <aside class="notice-box"><b>
+          <spring:message code="bytrox.trading.metals.050" />
+        </b>
+        <spring:message code="bytrox.trading.metals.051" />
+      </aside>
+      <div class="center"><a class="btn btn-primary" href="${ctx}/${siteLang}/account-types">
+          <spring:message code="bytrox.trading.metals.052" />
+        </a></div>
+    </div>
+  </section>
+  <section class="cta">
+    <div class="container">
+      <h2>
+        <spring:message code="bytrox.trading.metals.053" />
+      </h2>
+      <p>
+        <spring:message code="bytrox.trading.metals.054" />
+      </p><a class="btn btn-light" href="${ctx}/${siteLang}/account-types">
+        <spring:message code="bytrox.trading.metals.055" />
+      </a><a class="btn" style="background:rgba(255,255,255,.2);color:#fff" href="#">
+        <spring:message code="bytrox.trading.metals.056" />
+      </a>
+    </div>
+  </section>
+</main>
 <jsp:include page="../frame/bytroxFooter.jsp" />
