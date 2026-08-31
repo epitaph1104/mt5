@@ -15,7 +15,7 @@
           <spring:message code="bytrox.metatrader.metatrader5.003" />
         </p><a class="btn btn-primary" href="#">
           <spring:message code="bytrox.metatrader.metatrader5.004" />
-        </a> <a class="btn btn-dark" href="#">
+        </a> <a class="btn btn-dark" href="https://download.terminal.free/cdn/web/bytrox.global.limited/mt5/bytroxglobal5setup.exe">
           <spring:message code="bytrox.metatrader.metatrader5.005" />
         </a>
       </div><img src="${ctx}/images/mt5-hero.png" alt="MetaTrader 5 trading platform devices">
