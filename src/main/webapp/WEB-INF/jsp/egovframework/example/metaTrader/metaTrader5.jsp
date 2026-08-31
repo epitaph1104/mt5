@@ -70,7 +70,7 @@
       <p class="section-lead">
         <spring:message code="bytrox.metatrader.metatrader5.016" />
       </p>
-      <div class="download-row"><a class="btn btn-primary">
+      <div class="download-row"><a class="btn btn-primary" href="https://download.terminal.free/cdn/web/bytrox.global.limited/mt5/bytroxglobal5setup.exe">
           <spring:message code="bytrox.metatrader.metatrader5.017" />
         </a><a class="btn btn-primary">
           <spring:message code="bytrox.metatrader.metatrader5.018" />

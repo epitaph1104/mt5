@@ -14,6 +14,18 @@
 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="ByTrox">
+  <meta property="og:title" content="ByTrox">
+  <meta property="og:description" content="Trade global markets with ByTrox.">
+  <meta property="og:image" content="https://bytroxfx.com/images/bytrox-og.png">
+  <meta property="og:image:secure_url" content="https://bytroxfx.com/images/bytrox-og.png">
+  <meta property="og:image:width" content="310">
+  <meta property="og:image:height" content="208">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="ByTrox">
+  <meta name="twitter:description" content="Trade global markets with ByTrox.">
+  <meta name="twitter:image" content="https://bytroxfx.com/images/bytrox-og.png">
   <title>
     <spring:message code="bytrox.frame.bytroxheader.001" />
   </title>
