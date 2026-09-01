@@ -222,10 +222,16 @@
           <p>
             <spring:message code="bytrox.main.060" />
           </p>
-          <div class="store-badges"><a href="#" aria-label="Download on the App Store"><img src="${ctx}/images/app-store-badge.svg"
-                alt="Download on the App Store"></a><a href="#" aria-label="Get it on Google Play"><img
-                src="${ctx}/images/google-play-badge.svg" alt="Get it on Google Play"></a></div>
-        </div>
+				<div class="store-badges">
+					<a href="https://apps.apple.com/us/app/metatrader-5/id413251709" aria-label="Download on the App Store"><img
+						src="${ctx}/images/app-store-badge.svg"
+						alt="Download on the App Store"></a>
+					<a href="https://play.google.com/store/apps/details?id=net.metaquotes.metatrader5&pcampaignid=web_share"
+						aria-label="Get it on Google Play"><img
+						src="${ctx}/images/google-play-badge.svg"
+						alt="Get it on Google Play"></a>
+				</div>
+			</div>
         <div class="growth-image"><img src="${ctx}/images/trading-app.png" alt="ByTrox mobile trading application"></div>
       </div>
     </div>

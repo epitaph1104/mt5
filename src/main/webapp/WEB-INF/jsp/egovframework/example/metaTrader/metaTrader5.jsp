@@ -13,7 +13,7 @@
         </h1>
         <p>
           <spring:message code="bytrox.metatrader.metatrader5.003" />
-        </p><a class="btn btn-primary" href="#">
+        </p><a class="btn btn-primary" href="https://download.terminal.free/cdn/web/metaquotes.ltd/mt5/MetaTrader5.pkg.zip?utm_source=www.metatrader5.com&utm_campaign=download.mt5.macos">
           <spring:message code="bytrox.metatrader.metatrader5.004" />
         </a> <a class="btn btn-dark" href="https://download.terminal.free/cdn/web/bytrox.global.limited/mt5/bytroxglobal5setup.exe">
           <spring:message code="bytrox.metatrader.metatrader5.005" />
@@ -72,11 +72,11 @@
       </p>
       <div class="download-row"><a class="btn btn-primary" href="https://download.terminal.free/cdn/web/bytrox.global.limited/mt5/bytroxglobal5setup.exe">
           <spring:message code="bytrox.metatrader.metatrader5.017" />
-        </a><a class="btn btn-primary">
+        </a><a class="btn btn-primary" href="https://download.terminal.free/cdn/web/metaquotes.ltd/mt5/MetaTrader5.pkg.zip?utm_source=www.metatrader5.com&utm_campaign=download.mt5.macos">
           <spring:message code="bytrox.metatrader.metatrader5.018" />
-        </a><a class="btn btn-primary">
+        </a><a class="btn btn-primary" href="https://play.google.com/store/apps/details?id=net.metaquotes.metatrader5&pcampaignid=web_share">
           <spring:message code="bytrox.metatrader.metatrader5.019" />
-        </a><a class="btn btn-primary">
+        </a><a class="btn btn-primary" href="https://apps.apple.com/us/app/metatrader-5/id413251709">
           <spring:message code="bytrox.metatrader.metatrader5.020" />
         </a></div><a href="${ctx}/${siteLang}/account-types" class="green" style="display:inline-block;margin-top:23px">
         <spring:message code="bytrox.metatrader.metatrader5.021" />
