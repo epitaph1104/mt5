@@ -11,9 +11,9 @@
 
 <head>
 <script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="703ed9a9-f52f-46fe-8bcd-a025446c0bab" data-blockingmode="auto" type="text/javascript"></script>
-
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Experience a wide range of Forex, Commodities, Metals, Indices, and Cryptocurrencies in the optimal trading environment, featuring low CFD fees, easy account opening, and fast deposits and withdrawals.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">  
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="ByTrox">
   <meta property="og:title" content="ByTrox">
@@ -45,7 +45,7 @@
               <spring:message code="bytrox.frame.bytroxheader.003" />
             </a><a href="${ctx}/${siteLang}/trading/indices">
               <spring:message code="bytrox.frame.bytroxheader.004" />
-            </a><a href="${ctx}/${siteLang}/trading/commodotles">
+            </a><a href="${ctx}/${siteLang}/trading/commodities">
               <spring:message code="bytrox.frame.bytroxheader.005" />
             </a><a href="${ctx}/${siteLang}/trading/metals">
               <spring:message code="bytrox.frame.bytroxheader.006" />

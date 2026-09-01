@@ -72,8 +72,8 @@ public class MainController {
 		setLanguageInSession(lang, request);
 		return "trading/forex";
 	}
-	@RequestMapping(value="/{lang}/trading/commodotles")
-	public String commodotlesnlang(HttpServletRequest request, @PathVariable("lang") String lang){
+	@RequestMapping(value="/{lang}/trading/commodities")
+	public String commoditiesnlang(HttpServletRequest request, @PathVariable("lang") String lang){
 		setLanguageInSession(lang, request);
 		return "trading/commodotles";
 	}	
@@ -288,8 +288,8 @@ public class MainController {
 	public String forex(HttpServletRequest request){
 	    return setLanguageInSessionNolang(request);
 	}
-	@RequestMapping(value="/trading/commodotles")
-	public String commodotles(HttpServletRequest request){
+	@RequestMapping(value="/trading/commodities")
+	public String commodities(HttpServletRequest request){
 	    return setLanguageInSessionNolang(request);
 	}	
 	@RequestMapping(value="/trading/metals")
