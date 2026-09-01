@@ -41,7 +41,7 @@
           <li><a href="${ctx}/${siteLang}/trading/metals">
               <spring:message code="bytrox.frame.bytroxfooter.010" />
             </a></li>
-          <li><a href="${ctx}/${siteLang}/trading/commodotles">
+          <li><a href="${ctx}/${siteLang}/trading/commodities">
               <spring:message code="bytrox.frame.bytroxfooter.011" />
             </a></li>
           <li><a href="${ctx}/${siteLang}/privacyPolicy">

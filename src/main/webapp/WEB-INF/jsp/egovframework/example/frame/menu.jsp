@@ -39,8 +39,8 @@
 					<a href="/trading/forex" class="drop-menu-link w-inline-block">
 						<div>Forex</div>
 					</a>
-					<a href="/trading/commodotles" class="drop-menu-link w-inline-block">
-						<div>COMMODOTLES</div>
+					<a href="/trading/commodities" class="drop-menu-link w-inline-block">
+						<div>COMMODITIES</div>
 					</a>
 					<a href="/trading/metals" class="drop-menu-link w-inline-block">
 						<div>METALS</div>
