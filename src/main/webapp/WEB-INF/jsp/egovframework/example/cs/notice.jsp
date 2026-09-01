@@ -26,8 +26,7 @@
           <c:otherwise>
             <c:forEach var="item" items="${list}">
               <!-- Notice list item -->
-              <article class="notice-row new notice-toggle" data-target="notice-detail-${item.idx}" role="button" tabindex="0"
-                aria-expanded="false">
+              <article class="notice-row new notice-toggle">
                 <div>
                   <c:choose>
                     <c:when test="${now.time - item.ndate.time < 7 * 24 * 60 * 60 * 1000}">
@@ -42,15 +41,15 @@
                     </c:otherwise>
                   </c:choose>
                 </div>
-                <a href="#notice-detail-${item.idx}" class="notice-title" onclick="return false;">
+                <button type="button" class="notice-title" aria-controls="notice-detail-${item.idx}" aria-expanded="false">
                   <c:out value="${item.title}" />
-                </a>
+                </button>
                 <time>
                   <fmt:formatDate value="${item.ndate}" pattern="yyyy-MM-dd" />
                 </time>
               </article>
               <!-- Notice details -->
-              <div id="notice-detail-${item.idx}" class="notice-detail">
+              <div id="notice-detail-${item.idx}" class="notice-detail" hidden>
                 <div class="notice-detail-inner">
                   <c:out value="${item.text}" escapeXml="false" />
                 </div>
@@ -86,5 +85,20 @@
     window.location.href = '${ctx}/${siteLang}/cs/notice?pageIndex=' +
       pageIndex;
   }
+
+  document.querySelectorAll('.notice-toggle .notice-title').forEach(function (title) {
+    title.addEventListener('click', function () {
+      var detail = document.getElementById(title.getAttribute('aria-controls'));
+      var isOpen = title.getAttribute('aria-expanded') === 'true';
+
+      if (!detail) {
+        return;
+      }
+
+      title.setAttribute('aria-expanded', String(!isOpen));
+      title.closest('.notice-toggle').classList.toggle('is-open', !isOpen);
+      detail.hidden = isOpen;
+    });
+  });
 </script>
 <jsp:include page="../frame/bytroxFooter.jsp" />
