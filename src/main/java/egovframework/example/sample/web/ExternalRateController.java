@@ -11,13 +11,13 @@ import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.util.Collections;
 import java.util.HashMap;
-import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.concurrent.atomic.AtomicReference;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.springframework.stereotype.Controller;
@@ -32,7 +32,7 @@ public class ExternalRateController {
             "e49e2f12-4f58-4b59-bb6f-939f9d1fcb04";
 
     // Spread
-    // 0 = 업비트/빗썸 시세 그대로
+    // 0 = 시세 그대로
     // 100 = 1%
     private static final int SPREAD_BPS = 0;
 
@@ -42,10 +42,13 @@ public class ExternalRateController {
     private static final String BITHUMB =
             "https://api.bithumb.com/public/ticker/USDT_KRW";
 
-    // 원본과 동일
+    // 상대 원본과 동일
     private static final long CACHE_MS = 5000L;
     private static final int TIMEOUT_MS = 3000;
 
+    /**
+     * CRM이 보내올 수 있는 표기 흔들림을 흡수한다.
+     */
     private static final Map<String, String> ALIAS;
 
     static {
@@ -80,9 +83,9 @@ public class ExternalRateController {
 
         try {
 
-            // ========================================
+            // =====================================================
             // 1. API Key 검증
-            // ========================================
+            // =====================================================
 
             String key = request.getHeader("key");
 
@@ -96,17 +99,15 @@ public class ExternalRateController {
             }
 
 
-            // ========================================
-            // 2. 통화 확인
-            // ========================================
+            // =====================================================
+            // 2. 통화쌍 확인
+            // =====================================================
 
-            String source = normalize(
-                    request.getParameter("source_currency")
-            );
+            String source =
+                    normalize(request.getParameter("source_currency"));
 
-            String target = normalize(
-                    request.getParameter("target_currency")
-            );
+            String target =
+                    normalize(request.getParameter("target_currency"));
 
 
             if (source == null || target == null) {
@@ -119,7 +120,6 @@ public class ExternalRateController {
             }
 
 
-            // 동일 통화
             if (source.equals(target)) {
 
                 response.setStatus(HttpServletResponse.SC_OK);
@@ -128,10 +128,59 @@ public class ExternalRateController {
             }
 
 
+            /*
+             * CRM은 "계좌 통화 / 입금 통화" 조합으로 조회한다.
+             *
+             * 계좌가 USD이고 입금이 KRW면:
+             *
+             * source_currency=USD
+             * target_currency=KRW
+             *
+             * 로 들어온다.
+             *
+             * USD 환산에도 업비트 테더 시세를 그대로 사용한다.
+             *
+             * 실제 은행 FX 환율이 아니라
+             * 김치프리미엄이 반영된 값이며,
+             * 원화 입금의 실제 조달 원가에 가깝기 때문이다.
+             *
+             * 순수 FX 환율이 필요한 결제 수단은
+             * CRM에 별도 소스를 등록해 분리한다.
+             */
+
+            boolean sourceIsDollar =
+                    isDollar(source);
+
+            boolean targetIsDollar =
+                    isDollar(target);
+
+
+            /*
+             * USD <-> USDT
+             *
+             * 동일한 달러 단위로 취급
+             * 1:1 반환
+             */
+            if (sourceIsDollar && targetIsDollar) {
+
+                response.setStatus(HttpServletResponse.SC_OK);
+
+                return ok(BigDecimal.ONE);
+            }
+
+
+            /*
+             * 지원하는 조합
+             *
+             * USD  -> KRW
+             * USDT -> KRW
+             * KRW  -> USD
+             * KRW  -> USDT
+             */
             boolean supported =
-                    ("USDT".equals(source) && "KRW".equals(target))
+                    (sourceIsDollar && "KRW".equals(target))
                     ||
-                    ("KRW".equals(source) && "USDT".equals(target));
+                    ("KRW".equals(source) && targetIsDollar);
 
 
             if (!supported) {
@@ -139,14 +188,17 @@ public class ExternalRateController {
                 response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
 
                 return error(
-                        "unsupported pair " + source + "/" + target
+                        "unsupported pair "
+                                + source
+                                + "/"
+                                + target
                 );
             }
 
 
-            // ========================================
+            // =====================================================
             // 3. 시세 조회
-            // ========================================
+            // =====================================================
 
             Quote quote;
 
@@ -166,33 +218,34 @@ public class ExternalRateController {
             }
 
 
-            // ========================================
-            // 4. 환율 방향 적용
-            // ========================================
+            // =====================================================
+            // 4. 방향 적용 + Spread
+            // =====================================================
 
-            BigDecimal mid = quote.price;
-
-            BigDecimal raw;
-
-            if ("USDT".equals(source)) {
-
-                // USDT -> KRW
-                raw = mid;
-
-            } else {
-
-                // KRW -> USDT
-                raw = BigDecimal.ONE.divide(
-                        mid,
-                        MathContext.DECIMAL64
-                );
-            }
+            BigDecimal mid =
+                    quote.price;
 
 
-            // ========================================
-            // 5. Spread 적용
-            // ========================================
+            /*
+             * USD/USDT -> KRW
+             *
+             * 업비트 USDT/KRW 가격 그대로
+             */
+            BigDecimal raw =
+                    sourceIsDollar
+                            ? mid
+                            : BigDecimal.ONE.divide(
+                                    mid,
+                                    MathContext.DECIMAL64
+                            );
 
+
+            /*
+             * Spread
+             *
+             * 양방향 모두 고객이 받는 통화가
+             * 조금 적어지는 방향
+             */
             BigDecimal factor =
                     BigDecimal.ONE.subtract(
                             BigDecimal.valueOf(SPREAD_BPS)
@@ -215,7 +268,19 @@ public class ExternalRateController {
                     .stripTrailingZeros();
 
 
-            // 1350 -> 1.35E+3 방지
+            /*
+             * stripTrailingZeros()는
+             *
+             * 1350
+             *
+             * 을
+             *
+             * 1.35E+3
+             *
+             * 형태로 만들 수 있다.
+             *
+             * CRM 파서 문제 방지.
+             */
             if (rate.scale() < 0) {
 
                 rate = rate.setScale(
@@ -231,20 +296,34 @@ public class ExternalRateController {
                         HttpServletResponse.SC_SERVICE_UNAVAILABLE
                 );
 
-                return error("rate_calculation_failed");
+                return error(
+                        "rate_calculation_failed"
+                );
             }
 
 
-            // ========================================
-            // 6. 정상 응답
-            // ========================================
+            // =====================================================
+            // 5. 정상 응답
+            // =====================================================
 
-            response.setStatus(HttpServletResponse.SC_OK);
+            response.setStatus(
+                    HttpServletResponse.SC_OK
+            );
 
+            /*
+             * 장애 조사용.
+             * CRM 동작에는 영향 없음.
+             *
+             * upbit
+             * upbit-cached
+             * bithumb
+             * bithumb-cached
+             */
             response.setHeader(
                     "X-Rate-Source",
                     quote.source
             );
+
 
             return ok(rate);
 
@@ -257,7 +336,9 @@ public class ExternalRateController {
                     HttpServletResponse.SC_SERVICE_UNAVAILABLE
             );
 
-            return error("rate_source_unavailable");
+            return error(
+                    "rate_source_unavailable"
+            );
         }
     }
 
@@ -268,8 +349,13 @@ public class ExternalRateController {
 
     private Quote getUsdtKrw() throws Exception {
 
-        Quote cached = cache.get();
+        Quote cached =
+                cache.get();
 
+
+        /*
+         * 5초 캐시
+         */
         if (cached != null
                 && System.currentTimeMillis() - cached.at < CACHE_MS) {
 
@@ -283,18 +369,26 @@ public class ExternalRateController {
 
         Quote fresh;
 
+
+        /*
+         * 업비트 1순위
+         *
+         * 실패하면 빗썸 fallback
+         */
         try {
 
-            fresh = fromUpbit();
+            fresh =
+                    fromUpbit();
 
         } catch (Exception e) {
 
             System.out.println(
-                    "[rate] upbit failed, falling back to bithumb : "
+                    "[rate] upbit failed, falling back to bithumb: "
                             + e.getMessage()
             );
 
-            fresh = fromBithumb();
+            fresh =
+                    fromBithumb();
         }
 
 
@@ -305,18 +399,24 @@ public class ExternalRateController {
 
 
     // ============================================================
-    // 업비트
+    // 업비트 시세
     // ============================================================
 
     private Quote fromUpbit() throws Exception {
 
-        String raw = httpGet(UPBIT);
+        String raw =
+                httpGet(UPBIT);
 
-        JSONParser parser = new JSONParser();
 
-        Object parsed = parser.parse(raw);
+        JSONParser parser =
+                new JSONParser();
 
-        if (!(parsed instanceof org.json.simple.JSONArray)) {
+
+        Object parsed =
+                parser.parse(raw);
+
+
+        if (!(parsed instanceof JSONArray)) {
 
             throw new IllegalStateException(
                     "upbit bad payload"
@@ -324,8 +424,8 @@ public class ExternalRateController {
         }
 
 
-        org.json.simple.JSONArray array =
-                (org.json.simple.JSONArray) parsed;
+        JSONArray array =
+                (JSONArray) parsed;
 
 
         if (array.size() == 0) {
@@ -362,14 +462,18 @@ public class ExternalRateController {
 
 
     // ============================================================
-    // 빗썸
+    // 빗썸 시세
     // ============================================================
 
     private Quote fromBithumb() throws Exception {
 
-        String raw = httpGet(BITHUMB);
+        String raw =
+                httpGet(BITHUMB);
 
-        JSONParser parser = new JSONParser();
+
+        JSONParser parser =
+                new JSONParser();
+
 
         JSONObject root =
                 (JSONObject) parser.parse(raw);
@@ -423,21 +527,60 @@ public class ExternalRateController {
 
 
     // ============================================================
+    // 시세값 검증
+    // ============================================================
+
+    private BigDecimal requirePositive(
+            String raw,
+            String who) {
+
+        if (raw == null || raw.isEmpty()) {
+
+            throw new IllegalStateException(
+                    who + " bad payload"
+            );
+        }
+
+
+        BigDecimal value =
+                new BigDecimal(raw);
+
+
+        if (value.signum() <= 0) {
+
+            throw new IllegalStateException(
+                    who + " non-positive price"
+            );
+        }
+
+
+        return value;
+    }
+
+
+    // ============================================================
     // HTTP GET
     // ============================================================
 
-    private String httpGet(String urlStr) throws Exception {
+    private String httpGet(
+            String urlStr) throws Exception {
 
         HttpURLConnection conn =
                 (HttpURLConnection)
                         new URL(urlStr).openConnection();
 
+
         try {
 
             conn.setRequestMethod("GET");
 
-            conn.setConnectTimeout(TIMEOUT_MS);
-            conn.setReadTimeout(TIMEOUT_MS);
+            conn.setConnectTimeout(
+                    TIMEOUT_MS
+            );
+
+            conn.setReadTimeout(
+                    TIMEOUT_MS
+            );
 
             conn.setRequestProperty(
                     "Accept",
@@ -507,34 +650,17 @@ public class ExternalRateController {
 
 
     // ============================================================
-    // 값 검증
+    // USD / USDT 판별
     // ============================================================
 
-    private BigDecimal requirePositive(
-            String raw,
-            String who) {
+    /**
+     * USD와 USDT를 동일한 달러 단위로 취급한다.
+     */
+    private boolean isDollar(
+            String code) {
 
-        if (raw == null || raw.isEmpty()) {
-
-            throw new IllegalStateException(
-                    who + " bad payload"
-            );
-        }
-
-
-        BigDecimal value =
-                new BigDecimal(raw);
-
-
-        if (value.signum() <= 0) {
-
-            throw new IllegalStateException(
-                    who + " non-positive price"
-            );
-        }
-
-
-        return value;
+        return "USD".equals(code)
+                || "USDT".equals(code);
     }
 
 
@@ -542,7 +668,8 @@ public class ExternalRateController {
     // 통화 코드 normalize
     // ============================================================
 
-    private String normalize(String code) {
+    private String normalize(
+            String code) {
 
         if (code == null) {
 
@@ -596,15 +723,18 @@ public class ExternalRateController {
     // ============================================================
 
     @SuppressWarnings("unchecked")
-    private String ok(BigDecimal rate) {
+    private String ok(
+            BigDecimal rate) {
 
         JSONObject obj =
                 new JSONObject();
+
 
         obj.put(
                 "rate",
                 rate
         );
+
 
         return obj.toJSONString();
     }
@@ -615,22 +745,25 @@ public class ExternalRateController {
     // ============================================================
 
     @SuppressWarnings("unchecked")
-    private String error(String message) {
+    private String error(
+            String message) {
 
         JSONObject obj =
                 new JSONObject();
+
 
         obj.put(
                 "error",
                 message
         );
 
+
         return obj.toJSONString();
     }
 
 
     // ============================================================
-    // Cache 객체
+    // 시세 캐시 객체
     // ============================================================
 
     private static class Quote {
@@ -647,11 +780,14 @@ public class ExternalRateController {
                 String source,
                 long at) {
 
-            this.price = price;
+            this.price =
+                    price;
 
-            this.source = source;
+            this.source =
+                    source;
 
-            this.at = at;
+            this.at =
+                    at;
         }
     }
 }
